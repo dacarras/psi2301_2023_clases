@@ -1,0 +1,425 @@
+---
+title: "Simulacion de distribución muestral"
+subtitle: "Distribuciones muestrales de 500 observaciones, y 500 replicas"
+author: "psi2301"
+output:
+  html_document:
+    theme: paper
+    highlight: kate
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    fig_width: 10 
+    fig_height: 8 
+---
+
+# Distribución muestral de las medias
+
+## Población finita
+
+```{r}
+
+#-------------------------------------------------------------------
+# poblacion finita
+#-------------------------------------------------------------------
+
+library(dplyr)
+file_url <- url('https://github.com/dacarras/psi2301_examples/raw/master/data/ido_2010.rds')
+data_teachers <- readRDS(file_url)
+
+# Nota: totalidad de los profesores que trabajan en Chile en el 2010.
+#       Inlcuye proferes de escuelas publicas, privadas, subvencionadas,
+#       entre otro tipo de escuelas. Este listado constituye un censo de
+#       profesores.
+
+#-------------------------------------------------------------------
+# contenido de los datos
+#-------------------------------------------------------------------
+dplyr::glimpse(data_teachers)
+
+# year <dbl> 2010, 2010, 2010, # año
+# id   <chr> "AA1029263411", " # id único por cada profesor
+# sex  <dbl> 0, 1, 0, 1, 1, 0, # sexo (1 = mujer, 0 = hombre)
+# age  <dbl> 60.82466, 61.0082 # edad en años.
+
+
+#-------------------------------------------------------------------
+# extraer parametros de la poblacion.
+#-------------------------------------------------------------------
+
+sd_pop <- function(x){
+sqrt(sum((x - mean(x))^2)/(length(x)))
+}
+
+# Nota: se emplea la formula de desviación estandar de la población.
+
+media_poblacional <- mean(data_teachers$age, na.rm = TRUE)
+desviacion_poblacional <- sd_pop(data_teachers$age)
+
+#-------------------------------------------------------------------
+# parametros de la poblacion.
+#-------------------------------------------------------------------
+
+library(dplyr)
+data.frame(
+parametros = c('media poblacional','desviacion poblacional'),
+valores = c(media_poblacional, desviacion_poblacional)
+) %>%
+knitr::kable(., digits = 2)
+
+#-------------------------------------------------------------------
+# distribución de la población
+#-------------------------------------------------------------------
+
+hist(data_teachers$age,
+  main = "Distribución de edad de la población profesores en Chile en 2010",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v=media_poblacional, lty = 2)
+
+```
+
+## Extraer una muestra de 30 casos y su media
+
+```{r}
+
+#-------------------------------------------------------------------
+# ejemplo de una muestra
+#-------------------------------------------------------------------
+
+set.seed(2023)
+muestra_x  <- dplyr::slice_sample(
+              data_teachers,
+              n = 30, 
+              replace = TRUE
+              )
+
+media_muestra_x <- mean(muestra_x$age, na.rm = TRUE)
+
+#-------------------------------------------------------------------
+# medias comparadas
+#-------------------------------------------------------------------
+
+library(dplyr)
+data.frame(
+parametros = c('media poblacional','media de una muestra'),
+valores = c(media_poblacional, media_muestra_x)
+) %>%
+knitr::kable(., digits = 2)
+
+#-------------------------------------------------------------------
+# suponer media de la muestra sobre poblacion 
+#-------------------------------------------------------------------
+
+hist(data_teachers$age,
+  main = "Distribución de edad de la población profesores en Chile en 2010",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_poblacional, lty = 2, col = 'black')
+abline(v = media_muestra_x,   lty = 2, col = 'red')
+
+
+```
+
+
+# Distribución muestral de 500 observaciones y 500 replicas
+
+## Colección de muestras
+
+```{r}
+
+#-------------------------------------------------------------------
+# condiciones de la distribución muestral
+#-------------------------------------------------------------------
+
+set.seed(12345)
+number_of_samples <- 500
+sample_size       <- 500
+
+#-------------------------------------------------------------------
+# numero de replicas
+#-------------------------------------------------------------------
+
+replicate_list <- 1:number_of_samples
+
+#-------------------------------------------------------------------
+# conjunto de muestras
+#-------------------------------------------------------------------
+
+collection_of_samples <- purrr::map_df(replicate_list, 
+  ~ dplyr::slice_sample(data_teachers,
+    n = sample_size, 
+    replace = TRUE
+    ),
+   .id = 'sample') %>%
+dplyr::glimpse()
+
+```
+
+## Distribución de Medias
+
+```{r}
+
+#-------------------------------------------------------------------
+# distribucion de medias
+#-------------------------------------------------------------------
+
+sampling_distribucion_of_means <- collection_of_samples %>%
+group_by(sample) %>%
+summarize(
+  stat_mean = mean(age)
+)
+
+#-------------------------------------------------------------------
+# media de la distribución muestral
+#-------------------------------------------------------------------
+
+media_de_distribucion_muestral <- mean(
+  sampling_distribucion_of_means$stat_mean, 
+  na.rm = TRUE
+  )
+
+#-------------------------------------------------------------------
+# histograma de la distribución de medias
+#-------------------------------------------------------------------
+
+hist(sampling_distribucion_of_means$stat_mean,
+  main = "Distribución muestral de medias",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_de_distribucion_muestral, lty = 2, col = 'blue')
+
+#-------------------------------------------------------------------
+# test de normalidad
+#-------------------------------------------------------------------
+
+shapiro.test(sampling_distribucion_of_means$stat_mean)
+
+
+```
+
+## Comparación gráfica con la población
+
+```{r}
+
+#-------------------------------------------------------------------
+# histograma
+#-------------------------------------------------------------------
+
+par(mfrow=c(2,1))
+
+hist(data_teachers$age,
+  main = "Distribución de edad de la población profesores en Chile en 2010",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_poblacional, lty = 2, col = 'black')
+abline(v = media_muestra_x,   lty = 2, col = 'red')
+
+hist(sampling_distribucion_of_means$stat_mean,
+  main = "Distribución muestral de medias",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_de_distribucion_muestral, lty = 2, col = 'blue')
+
+par(mfrow=c(1,1))
+
+```
+
+## Comparación gráfica con la población, parámetro y estadigrafo
+
+```{r}
+
+#-------------------------------------------------------------------
+# histograma
+#-------------------------------------------------------------------
+
+par(mfrow=c(2,1))
+
+hist(data_teachers$age,
+  main = "Distribución de edad de la población profesores en Chile en 2010",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_poblacional, lty = 2, col = 'black')
+
+hist(sampling_distribucion_of_means$stat_mean,
+  main = "Distribución muestral de medias",
+  ylab = 'Frecuencia', 
+  xlab = 'Edad en Años',
+  xlim = c(15,95)
+  )
+abline(v = media_de_distribucion_muestral, lty = 2, col = 'red')
+
+par(mfrow=c(1,1))
+
+#-------------------------------------------------------------------
+# medias comparadas
+#-------------------------------------------------------------------
+
+library(dplyr)
+data.frame(
+parametros = c(
+  'media poblacional',
+  'media de la distribución muestral (n = 500)'
+  ),
+valores = 
+c(media_poblacional, 
+  media_de_distribucion_muestral
+  )
+) %>%
+knitr::kable(., digits = 2)
+
+
+```
+
+## Comparación de medias con la población
+
+```{r}
+
+#-------------------------------------------------------------------
+# medias comparadas
+#-------------------------------------------------------------------
+
+library(dplyr)
+data.frame(
+parametros = c(
+  'media poblacional',
+  'media de una muestra (n = 30)',
+  'media de la distribución muestral (n = 500)'
+  ),
+valores = 
+c(media_poblacional, 
+  media_muestra_x,
+  media_de_distribucion_muestral
+  )
+) %>%
+knitr::kable(., digits = 2)
+
+```
+
+## Error estándar via formula y via descriptivo de la distribución muestral
+
+```{r}
+
+#-------------------------------------------------------------------
+# error estandar de la distribución muestral
+#-------------------------------------------------------------------
+
+estimated_standard_error <- desviacion_poblacional / sqrt(sample_size)
+
+standard_error_of_the_means <- sd(sampling_distribucion_of_means$stat_mean, na.rm = TRUE)
+
+#-------------------------------------------------------------------
+# medias comparadas
+#-------------------------------------------------------------------
+
+library(dplyr)
+data.frame(
+parametros = c(
+  'error estándar (via formula)',
+  'error estándar (de la distribución muestral) (n = 500)'
+  ),
+valores = 
+c(estimated_standard_error, 
+  standard_error_of_the_means
+  )
+) %>%
+knitr::kable(., digits = 2)
+
+```
+
+
+## Proporción de muestras que contienen al parámetro poblacional
+
+```{r}
+
+#-------------------------------------------------------------------
+# error estandar de la distribución muestral
+#-------------------------------------------------------------------
+
+standard_error <- desviacion_poblacional / sqrt(sample_size)
+standard_error
+
+# simulation with t test
+#
+# alpha = 0.05
+# degrees_freedom = sample_size - 1
+# t_score = qt(p=alpha/2, df=degrees_freedom,lower.tail=FALSE)
+
+#-------------------------------------------------------------------
+# margen de error de la distribución muestral
+#-------------------------------------------------------------------
+
+margin_error <- 1.96*standard_error
+margin_error
+
+# simulation with t test
+#
+# margin_error <- t_score*standard_error
+# margin_error
+
+#-------------------------------------------------------------------
+# confidence interval
+#-------------------------------------------------------------------
+
+means_with_ci <- sampling_distribucion_of_means %>%
+mutate(ll = stat_mean - 1.96*standard_error) %>%
+mutate(ul = stat_mean + 1.96*standard_error) %>%
+mutate(status = case_when(
+  media_poblacional > ul ~ 'no',
+  media_poblacional < ll ~ 'no',
+  TRUE ~ 'yes'
+  )) %>%
+dplyr::glimpse()
+
+#-------------------------------------------------------------------
+# proporcion de intervalos que capturan la media poblaciobal
+#-------------------------------------------------------------------
+
+means_with_ci %>%
+summarize(
+proportion = mean(status == 'yes')
+) %>%
+knitr::kable(., digits = 2)
+
+```
+
+## Intervalos de confianza que capturan al parámetro
+
+```{r}
+
+#-------------------------------------------------------------------
+# grafico de intervalos que captura la media poblacional
+#-------------------------------------------------------------------
+
+library(ggplot2)
+ggplot(means_with_ci, aes(sample, stat_mean)) +        
+geom_point() +
+geom_errorbar(
+  aes(
+    ymin = ll, 
+    ymax = ul
+    ), 
+  color = dplyr::if_else(
+    means_with_ci$status == 'yes', 
+    'black', 
+    'red'
+    )) +
+geom_hline(yintercept = media_poblacional) +
+coord_flip() +
+theme_bw() +
+ylim(15,95)
+
+```
