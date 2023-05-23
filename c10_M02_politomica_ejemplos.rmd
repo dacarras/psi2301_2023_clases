@@ -1,0 +1,522 @@
+---
+title: "Regresión con variable politómica (3 grupos)"
+subtitle: "PSI2301 (2023)"
+author: "dacarras"
+output:
+  html_document:
+    theme: paper
+    highlight: kate
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    fig_width: 10 
+    fig_height: 10 
+---
+
+<style>
+  .main-container {
+    max-width: 1600px !important;
+  }
+  .list-group-item.active, 
+  .list-group-item.active:focus, 
+  .list-group-item.active:hover {
+    background-color: #373334;
+  }
+</style>
+
+
+```{r setup, include=FALSE}
+#--------------------------------------
+# setup
+#--------------------------------------
+
+# knitr option
+knitr::opts_chunk$set(dev = 'png')
+options(knitr.kable.NA = '')
+options(digits = 7)
+options(scipen = 999999)
+
+# remove all previous objects
+rm(list = ls())
+
+# fonts
+Sys.setenv(LANG="en_US.UTF-8")
+
+
+```
+
+
+# Ejemplo 1
+
+- Primera encuesta de polivictimizacion (2017)
+- 19.684 observaciones estudiantes, de 699 escuelas
+- Ponderación de la muestra se realiza mediante ajustes de post-estratificación por sexo, edad, dependencia administrativa del establecimiento y región
+
+## Variables
+
+- Variable de respuesta
+  + Depresion: escala de depresión infantil de Birleson
+
+- Factor Sociodemográficos
+  + Sexo
+  + Edad
+
+- Factores Escolares
+  + Depedencia Administrativa
+
+- Factores de Riesgo
+  + Polivictimas de vida (10% de la población con mayor exposicion a eventos de violencia)
+  + Polivictimas al año (10% de la población con mayor exposicion a eventos de violencia)
+
+
+## Abrir datos
+
+```{r , echo=TRUE, warning=FALSE}
+
+
+#----------------------------------------------------------
+# abrir datos
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# abrir datos desde github
+# -----------------------------------------------
+
+
+data_poly <- readRDS(
+url('https://github.com/dacarras/psi4035_examples/raw/master/data/data_poly_all.rds')
+)
+
+# -----------------------------------------------
+# inspeccionar datos
+# -----------------------------------------------
+
+library(dplyr)
+data_poly %>%
+labelled::look_for() %>%
+labelled::lookfor_to_long_format() %>%
+tibble::as_tibble() %>%
+knitr::kable()
+
+
+# -----------------------------------------------
+# inspeccionar datos (variables)
+# -----------------------------------------------
+
+library(dplyr)
+data_poly %>%
+labelled::look_for() %>%
+labelled::lookfor_to_long_format() %>%
+tibble::as_tibble() %>%
+dplyr::select(variable, label) %>%
+unique() %>%
+knitr::kable()
+
+
+
+
+```
+
+
+## Preparar datos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# preparar datos
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# funcion para centrar
+# -----------------------------------------------
+
+c_mean <- function (x, j) {
+    ave(x, j, FUN = function(x) mean(x, na.rm = T))
+}
+
+# -----------------------------------------------
+# funcion para borrar meta data
+# -----------------------------------------------
+
+remove_labels <- function (x)  {
+    data <- dplyr::mutate(x, across(everything(), as.vector))
+    return(data)
+}
+
+# -----------------------------------------------
+# datos para modelar
+# -----------------------------------------------
+
+data_model <- data_poly %>%
+              # sexo
+              mutate(sex = case_when(
+                P1_2 == 1 ~ 1, # mujer
+                P1_2 == 2 ~ 0  # hombre
+                )) %>%
+              # edad
+              mutate(edad_text = case_when(
+                edad_cat3 == 1 ~ '12 a 13',   # 12 a 13
+                edad_cat3 == 2 ~ '14 a 15',   # 14 a 15
+                edad_cat3 == 3 ~ '16 o más'   # 16 o mas
+                )) %>%
+              mutate(ed1 = case_when(
+                edad_cat3 == 1 ~ 1,  # 12 a 13
+                edad_cat3 == 2 ~ 0,  # 14 a 15
+                edad_cat3 == 3 ~ 0   # 16 o mas
+                )) %>%
+              mutate(ed2 = case_when(
+                edad_cat3 == 1 ~ 0,  # 12 a 13
+                edad_cat3 == 2 ~ 1,  # 14 a 15
+                edad_cat3 == 3 ~ 0   # 16 o mas
+                )) %>%
+              mutate(ed3 = case_when(
+                edad_cat3 == 1 ~ 0,  # 12 a 13
+                edad_cat3 == 2 ~ 0,  # 14 a 15
+                edad_cat3 == 3 ~ 1   # 16 o mas
+                )) %>%
+              # administración escolar
+              mutate(adm_text = case_when(
+                cod_depe_estudio == 1 ~ 'municipal',  # Municipal y AD          
+                cod_depe_estudio == 2 ~ 'subvencionado',  # Subvencionado
+                cod_depe_estudio == 3 ~ 'particular'   # Particular
+                )) %>%
+              mutate(mun = case_when(
+                cod_depe_estudio == 1 ~ 1,  # Municipal y AD          
+                cod_depe_estudio == 2 ~ 0,  # Subvencionado
+                cod_depe_estudio == 3 ~ 0   # Particular
+                )) %>%
+              mutate(sub = case_when(
+                cod_depe_estudio == 1 ~ 0,  # Municipal y AD          
+                cod_depe_estudio == 2 ~ 1,  # Subvencionado
+                cod_depe_estudio == 3 ~ 0   # Particular
+                )) %>%
+              mutate(pri = case_when(
+                cod_depe_estudio == 1 ~ 0,  # Municipal y AD          
+                cod_depe_estudio == 2 ~ 0,  # Subvencionado
+                cod_depe_estudio == 3 ~ 1   # Particular
+                )) %>%
+              # poli vida
+              mutate(exv = case_when(
+                poli_vida == 1 ~ 1,  # si
+                poli_vida == 2 ~ 0,  # no
+                )) %>%
+              # poli año
+              mutate(rev = case_when(
+                poli_año == 1 ~ 1,  # si
+                poli_año == 2 ~ 0,  # no
+                )) %>%
+# autoestima
+mutate(aut = PG_autoestima) %>%
+mutate(aut_m = aut - c_mean(aut, id_k))    %>%  # centering to the grand mean
+# depression
+mutate(dep = PH_depresion) %>%
+dplyr::glimpse()
+
+
+```
+
+
+## Variable de respuesta
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# Variable de respuesta
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# distribución variable de respuesta
+# -----------------------------------------------
+
+hist(data_model$dep)
+
+
+
+
+```
+
+### Items de originales de la escala de Birleson (Depresión)
+
+```
+
+|PH_1  |Pienso que los días que vienen serán agradables
+|PH_2  |Siento ganas de llorar
+|PH_3  |Tengo ganas de arrancar o escapar
+|PH_4  |Tengo dolores de estómago
+|PH_5  |Quiero salir a jugar fuera de casa
+|PH_6  |Duermo muy bien
+|PH_7  |Tengo mucha energía
+|PH_8  |Disfruto mis comidas
+|PH_9  |Puedo arreglármelas solo, valerme por mi mismo
+|PH_10 |Creo que no vale la pena vivir
+|PH_11 |Me resultan bien las cosas que hago
+|PH_12 |Disfruto lo que hago igual que antes
+|PH_13 |Me gusta hablar con mi familia
+|PH_14 |Tengo sueños horribles
+|PH_15 |Me siento muy solo
+|PH_16 |Me animo fácilmente, me entusiasmo con mucha facilidad
+|PH_17 |Me siento tan triste que difícilmente lo soporto
+|PH_18 |Me siento muy aburrido, lateado, choreado
+
+
+# Notas:
+# Categorias de respuesta
+#
+# 1 Nunca
+# 2 A veces
+# 3 Siempre
+
+```
+
+## Datos para realizar inferencias a la población
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# inferencia a la población
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# taylor series linearization
+# -----------------------------------------------
+
+library(srvyr)
+poli_svy  <- data_model %>%
+             remove_labels() %>%
+             as_survey_design(
+             strata = var_strat, 
+             ids = var_unit, 
+             weights = wgt_alu, 
+             nest = TRUE,
+             check_strata = TRUE
+             )
+
+# Opción: corección a unidad primaria de muestreo que resulte 
+# única al estrato
+
+library(survey)
+options(survey.lonely.psu="adjust")
+
+
+```
+
+
+## Descriptivos por grupo
+
+- Los descriptivos producidos sirven para realizar inferencias a la población de estudiantes, basados en diseño.
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# descriptivos
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# por tipo de escuela
+# -----------------------------------------------
+
+poli_svy %>%
+group_by(adm_text) %>%
+summarize(
+mean_dep = survey_mean(dep, na.rm = TRUE, vartype = c('se','ci'))
+) %>%
+knitr::kable(., digits = 2)
+
+# -----------------------------------------------
+# por tipo grupo etario
+# -----------------------------------------------
+
+poli_svy %>%
+group_by(edad_text) %>%
+summarize(
+mean_dep = survey_mean(dep, na.rm = TRUE, vartype = c('se','ci'))
+) %>%
+knitr::kable(., digits = 2)
+
+
+```
+
+
+## Modelos de Regresión
+
+- Los resultados generados por los modelos de regresión empleando diseño, son estimados que permiten realizar inferencias hibridas, basadas en diseño y basadas en modelo de forma simultánea (ver Sterba, 2009).
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# model comparison
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# equation
+# -----------------------------------------------
+
+f01 <- as.formula(dep ~ + 1 + mun + pri)
+f02 <- as.formula(dep ~ + 1 + ed1 + ed3)
+f03 <- as.formula(dep ~ + 1 + sub + pri + ed1 + ed3)
+
+
+# -----------------------------------------------
+# regressions with clustered errors (TSL)
+# -----------------------------------------------
+
+m01 <- survey::svyglm(f01, design = poli_svy)
+m02 <- survey::svyglm(f02, design = poli_svy)
+m03 <- survey::svyglm(f03, design = poli_svy)
+
+#--------------------------------------
+# compare models
+#--------------------------------------
+
+texreg::screenreg(
+    list(m01, m02, m03),
+    star.symbol = "*", 
+    center = TRUE, 
+    doctype = FALSE,
+    dcolumn = TRUE, 
+    booktabs = TRUE,
+    single.row = FALSE
+    )
+
+
+#--------------------------------------
+# variables
+#--------------------------------------
+
+# dep = puntaje de depresion de Birlesson
+#       min = 0, max = 36, media = 11.72
+
+# mun = escuelas municipales (sí = 1, no = 0)
+
+# sub = escuelas subvencionales (sí = 1, no = 0)
+
+# pri = escuelas privadas (sí = 1, no = 0)
+
+# ed1 = edad, 12 a 13 años (sí = 1, no = 0)
+
+# ed2 = edad, 14 a 15 años (sí = 1, no = 0)
+
+# ed3 = edad, 16 o más (sí = 1, no = 0)
+
+
+```
+
+## Tabla de resultados
+
+```
+========================================================
+             Model 1        Model 2        Model 3      
+--------------------------------------------------------
+(Intercept)      11.84 ***      11.89 ***      12.09 ***
+                 (0.08)         (0.10)         (0.14)   
+mun               0.11                                  
+                 (0.15)                                 
+pri              -1.72 ***                     -1.82 ***
+                 (0.25)                        (0.26)   
+ed1                             -0.65 ***      -0.64 ***
+                                (0.15)         (0.14)   
+ed3                             -0.04          -0.05    
+                                (0.13)         (0.13)   
+sub                                            -0.07    
+                                               (0.15)   
+--------------------------------------------------------
+Deviance     684017.80      678622.37      673927.78    
+Dispersion       37.63          37.76          37.49    
+Num. obs.     18180          17975          17975       
+========================================================
+*** p < 0.001; ** p < 0.01; * p < 0.05
+
+```
+
+**Notas sobre los resultados**
+
+- En el modelo 1 (Model 1):
+  - En el modelo 1, solo se ingresan como covariables a las covariables que nos informan respecto a la administración de la escuela, en la que se encuentran los estudiantes.
+  - Intercepto: es la media de puntajes de depresión, de las escuelas subvencionadas
+  - Pendiente 1: es la diferencia de medias, entre los estudiantes en escuelas municipales, y el intercepto (media de puntajes de los estudiantes en escuelas subvencionadas)
+  - Pendiente 2: es la diferencia de medias, entre los estudiantes en escuelas privadas, y el intercepto (media de puntajes de los estudiantes en escuelas subvencionadas)
+
+- En el modelo 2 (Model 2):
+  - Intercepto: es la media de puntajes de depresión de los estudiantes de 14 a 15 años.
+  - Pendiente 1: es la diferencia de medias, de los estudiantes de 12 a 13 años, en contraste al intercepto.
+  - Pendiente 2: es la diferencia de medias, de los estudiantes de 16 o más años, en contraste al intercepto.
+
+- En el modelo 3 (Model 3):
+  - Intercepto: es la media de puntajes esperados, para los estudiantes en escuelas municipales, de 14 a 15 años.
+  - Pendiente 1: es la diferencia de medias, de los estudiantes en escuelas privadas, y el intercepto de modelo del modelo.
+  - Pendiente 2: es la diferencia de medias, de los estudiantes de 12 a 13 años, en contraste al intercepto del modelo.
+  - Pendiente 3: es la diferencia de medias, de los estudiantes de 16 o más años, en contraste al intercepto del modelo.
+  - Pendiente 4: es la diferencia de medias, entre los estudiantes en escuelas subvencionadas, y el intercepto del modelo.
+
+
+
+
+## Datos Perdidos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# preparar datos
+#----------------------------------------------------------
+
+library(VIM)
+data_model %>%
+dplyr::select(dep, sex, mun, sub, pri, ed1, ed3) %>%
+# dplyr::sample_n(1000) %>%
+VIM::aggr(., 
+  combine  = TRUE, 
+  cex.lab  = .8, 
+  cex.axis = .6,
+  col      = c("white", "black"),
+  ylabs    = "Pattern of omissions"
+  )
+
+
+```
+
+## R2 con lavaan.survey
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# lavaan model
+#----------------------------------------------------------
+
+# -----------------------------------------------
+# model
+# -----------------------------------------------
+
+model_04 <-
+'
+dep ~ sex + sub + pri + sex + ed1 + ed3
+'
+
+# -----------------------------------------------
+# fit
+# -----------------------------------------------
+
+fit_04 <- lavaan::sem(model_04, data = data_model, mimic="Mplus", estimator = "MLR")
+
+# -----------------------------------------------
+# fit with svy
+# -----------------------------------------------
+
+svy_04 <- lavaan.survey::lavaan.survey(
+                 lavaan.fit = fit_04, 
+                 survey.design = poli_svy)
+
+
+# -----------------------------------------------
+# results
+# -----------------------------------------------
+
+lavaan::summary(svy_04,standardized=TRUE, fit.measures=TRUE, rsquare=TRUE)
+
+
+```
+
+
+# Referencias
+
+Sterba, S. K. (2009). Alternative Model-Based and Design-Based Frameworks for Inference From Samples to Populations: From Polarization to Integration. In Multivariate Behavioral Research (Vol. 44, Issue 6, pp. 711–740). https://doi.org/10.1080/00273170903333574
