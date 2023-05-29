@@ -210,6 +210,10 @@ data_model <- table_13_1 %>%
               mutate(wit_w = score - wit_c)      %>%
               ## distancias cuadráticas (varianza intra)
               mutate(wit_s = wit_w^2)            %>%              
+              ## desviaciones de las observaciones,
+              #  respecto a las medias de los grupos
+              mutate(tot_w = score - bet_g) %>%
+              mutate(tot_s = tot_w^2) %>%
               dplyr::glimpse()
 
 
@@ -227,15 +231,16 @@ knitr::kable(., digits = 3)
 
 with(data_model, cor(bet_w, wit_w))
 
-#--------------------------------------
-# componentes de varianza
-#--------------------------------------
 
-sst <- var(data_model$score)
+#--------------------------------------
+# ortogonalidad
+#--------------------------------------
 
 ssb <- sum(data_model$bet_s)
 
 ssw <- sum(data_model$wit_s)
+
+sst <- sum(data_model$tot_s)
 
 #--------------------------------------
 # grados de libertad
