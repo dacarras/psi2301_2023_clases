@@ -1,0 +1,250 @@
+---
+title: "Covarianza y Correlaciones"
+subtitle: "PSI2301"
+author: "dacarras"
+output:
+  github_document
+---
+
+
+```{r setup, include=FALSE}
+#--------------------------------------
+# setup
+#--------------------------------------
+
+# knitr option
+knitr::opts_chunk$set(dev = 'png')
+options(knitr.kable.NA = '')
+options(digits = 7)
+options(scipen = 999999)
+
+# remove all previous objects
+rm(list = ls())
+
+# fonts
+Sys.setenv(LANG="en_US.UTF-8")
+
+
+```
+
+# Clase 12: covarianza y correlaciones
+
+## Cargar datos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# cargar datos
+#----------------------------------------------------------
+
+#--------------------------------------
+# cargar dplyr
+#--------------------------------------
+
+library(dplyr)
+
+#--------------------------------------
+# datos Vik (2014, p63)
+#--------------------------------------
+
+table_5_2 <- read.table(text = "
+person       y     x
+      1      2     8
+      2      3     9
+      3      3     9
+      4      4    10
+      5      7     6
+      6      5     7
+      7      5     4
+      8      7     5
+      9      8     3
+     10      9     1
+     11      9     2
+     12     10     2
+", header = TRUE, stringsAsFactors = FALSE)
+
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+knitr::kable(table_5_2, digits = 3)
+
+```
+
+## Preparar datos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# preparar datos
+#----------------------------------------------------------
+
+#--------------------------------------
+# cargar dplyr
+#--------------------------------------
+
+library(dplyr)
+
+#--------------------------------------
+# medias de clusters
+#--------------------------------------
+
+c_mean <- function (x, j) {
+    ave(x, j, FUN = function(x) mean(x, na.rm = T))
+}
+
+#--------------------------------------
+# datos Vik (2014, p63)
+#--------------------------------------
+
+data_model <- table_5_2 %>%
+              mutate(all = 1) %>%
+              # cuadrados de cada variable
+              mutate(yq = y^2) %>%
+              mutate(xq = x^2) %>%
+              # medias de cada variable
+              mutate(y_g = c_mean(y, all)) %>%
+              mutate(x_g = c_mean(x, all)) %>%
+              ## desviaciones de cada variable
+              mutate(y_w = y - y_g) %>%
+              mutate(x_w = x - x_g) %>%
+              # producto cruzado
+              mutate(yx = y_w*x_w) %>%
+              # suma de cuadrados de las variables
+              mutate(y_s = y_w^2) %>%
+              mutate(x_s = x_w^2) %>%
+              dplyr::glimpse()
+
+
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+knitr::kable(data_model, digits = 3)
+
+
+```
+
+## Correlación por pasos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# correlación por pasos
+#----------------------------------------------------------
+
+#--------------------------------------
+# coeficiente de correlacion estimates
+#--------------------------------------
+
+# varianza comun o compartida entre dos variables
+shared_variance <- sum(data_model$yx)
+
+# varianza combinanda o total entre dos variables
+combined_variance <- sqrt(sum(data_model$y_s)*sum(data_model$x_s))
+
+# coeficiente de correlación
+shared_variance/combined_variance
+
+```
+
+## Correlación
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# correlación via función
+#----------------------------------------------------------
+
+#--------------------------------------
+# coeficiente de correlacion, cor.test
+#--------------------------------------
+
+data_model %>%
+dplyr::select(x,y) %>%
+with(., cor.test(x,y))
+
+
+#--------------------------------------
+# tabla de correlaciones
+#--------------------------------------
+
+data_model %>%
+dplyr::select(x,y) %>%
+corrr::correlate()
+
+
+```
+
+## Distribución muestral de una correlación
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# correlación via función
+#----------------------------------------------------------
+
+#--------------------------------------
+# coeficiente de correlacion, with infer
+#--------------------------------------
+
+library(infer)
+correlation_hat <- data_model %>% 
+  specify(y ~ x) %>% 
+  calculate(stat = "correlation")
+correlation_hat
+
+#--------------------------------------
+# coeficiente de correlacion, with infer
+#--------------------------------------
+
+correlation_hat <- data_model %>% 
+  observe(y ~ x, stat = "correlation")
+correlation_hat
+
+#--------------------------------------
+# distribución muestral
+#--------------------------------------
+
+null_dist <- data_model %>%
+   specify(y ~ x) %>% 
+   hypothesize(null = "independence") %>%
+   generate(reps = 5000, type = "permute") %>%
+   calculate(stat = "correlation")
+
+#--------------------------------------
+# valor p
+#--------------------------------------
+
+visualize(null_dist) +
+shade_p_value(
+  obs_stat = correlation_hat, 
+  direction = "two-sided"
+  )
+
+```
+
+## Correlación como coeficiente estandarizado
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# correlación via función
+#----------------------------------------------------------
+
+#--------------------------------------
+# coeficiente de correlacion, with infer
+#--------------------------------------
+
+lm(y ~ x, data = data_model) %>%
+summary()
+
+lm(
+  scale(y, scale = TRUE) ~ 
+  scale(x, scale = TRUE),
+  data = data_model) %>%
+summary()
+
+
+
+```
