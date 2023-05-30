@@ -69,6 +69,14 @@ person       y     x
 
 knitr::kable(table_5_2, digits = 3)
 
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+table_5_2 %>%
+dplyr::select(y, x) %>%
+readr::write_csv(., 'table.csv')
+
 ```
 
 ## Preparar datos
