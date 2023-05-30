@@ -1,0 +1,618 @@
+---
+title: "ANOVA para tres grupos y comparaciones múltiples"
+subtitle: "PSI2301"
+author: "dacarras"
+output:
+  github_document
+---
+
+
+```{r setup, include=FALSE}
+#--------------------------------------
+# setup
+#--------------------------------------
+
+# knitr option
+knitr::opts_chunk$set(dev = 'png')
+options(knitr.kable.NA = '')
+options(digits = 7)
+options(scipen = 999999)
+
+# remove all previous objects
+rm(list = ls())
+
+# fonts
+Sys.setenv(LANG="en_US.UTF-8")
+
+
+```
+
+# Taller 8: ANOVA para tres grupos
+
+## Cargar datos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# cargar datos
+#----------------------------------------------------------
+
+#--------------------------------------
+# cargar dplyr
+#--------------------------------------
+
+library(dplyr)
+
+#--------------------------------------
+# datos Vik (2014, p161)
+#--------------------------------------
+
+table_13_1 <- read.table(text = "
+person  score   drug
+      1     3   none
+      2     5   none
+      3     6   none
+      4     8   none
+      5     9   alcohol
+      6    11   alcohol
+      7    19   alcohol
+      8    15   alcohol
+      9    16   poly_drug
+     10    16   poly_drug
+     11    19   poly_drug
+     12    17   poly_drug
+     13     3   none
+     14     5   none
+     15     4   none
+     16     6   none
+     17     8   alcohol
+     18    10   alcohol
+     19    24   alcohol
+     20    24   alcohol
+     21    22   poly_drug
+     22    23   poly_drug
+     23    19   poly_drug
+     24    20   poly_drug
+", header = TRUE, stringsAsFactors = FALSE)
+
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+knitr::kable(table_13_1, digits = 3)
+
+```
+
+## Descriptivos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# descriptivos
+#----------------------------------------------------------
+
+#--------------------------------------
+# casos por grupo
+#--------------------------------------
+
+xtabs(~ drug, data = table_13_1)
+
+
+#--------------------------------------
+# casos por grupo
+#--------------------------------------
+
+dplyr::count(table_13_1, drug)
+
+#--------------------------------------
+# descriptivos por uso de drogas
+#--------------------------------------
+
+library(dplyr)
+table_13_1 %>%
+group_by(drug) %>%
+summarize(
+    mean = mean(score, na.rm = TRUE),
+    sd = sd(score, na.rm = TRUE),
+    n = n()
+    ) %>%
+knitr::kable(., digits = 2)
+
+
+#--------------------------------------
+# medias con intervalo de confianza
+#--------------------------------------
+
+library(dplyr)
+library(srvyr)
+data_13_srs <- table_13_1 %>% 
+                as_survey_design(ids = 1)
+
+
+data_13_srs %>%
+group_by(drug) %>%
+summarize(
+  score = survey_mean(score, vartype = c('ci', 'se'))
+) %>%
+knitr::kable(., digits = 2)
+
+#--------------------------------------
+# medias con intervalo de confianza
+#--------------------------------------
+
+data_plot <- data_13_srs %>%
+group_by(drug) %>%
+summarize(
+  score = survey_mean(score, vartype = c('ci', 'se'))
+)
+
+
+library(ggplot2)
+data_plot %>%
+arrange(desc(score)) %>%
+mutate(drug_lab = forcats::as_factor(drug)) %>%
+ggplot(., aes(drug_lab, score)) +
+geom_point(size = 3) +
+geom_linerange(aes(ymin = score_low, ymax = score_upp), size = 2) +
+ylab('') +
+xlab('') +
+scale_y_continuous(breaks = seq(0, 20, by = 2)) +
+coord_flip() +
+theme_bw() +
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text.x = element_text(angle = 0, hjust = 1)
+    )
+
+
+
+```
+
+
+## ANOVA por pasos
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# cargar datos
+#----------------------------------------------------------
+
+#--------------------------------------
+# medias de clusters
+#--------------------------------------
+
+c_mean <- function (x, j) {
+    ave(x, j, FUN = function(x) mean(x, na.rm = T))
+}
+
+#--------------------------------------
+# crear componentes
+#--------------------------------------
+
+data_model <- table_13_1 %>%
+              mutate(all = 1) %>%
+              # between
+              ## gran media
+              mutate(bet_g = c_mean(score, all))  %>%
+              ## media de los grupos
+              mutate(bet_c = c_mean(score, drug)) %>%
+              ## desviaciones de las medias de los grupos
+              mutate(bet_w = bet_c - bet_g)       %>%
+              ## distancias cuadráticas (varianza entre)
+              mutate(bet_s = bet_w^2)             %>%
+              # within
+              ## media de los grupos
+              mutate(wit_c = c_mean(score, drug)) %>%
+              ## desviaciones de las observaciones,
+              #  respecto a las medias de los grupos
+              mutate(wit_w = score - wit_c)      %>%
+              ## distancias cuadráticas (varianza intra)
+              mutate(wit_s = wit_w^2)            %>%              
+              ## desviaciones de las observaciones,
+              #  respecto a las medias de los grupos
+              mutate(tot_w = score - bet_g) %>%
+              mutate(tot_s = tot_w^2) %>%
+              dplyr::glimpse()
+
+
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+data_model %>%
+arrange(drug) %>%
+knitr::kable(., digits = 3)
+
+#--------------------------------------
+# ortogonalidad
+#--------------------------------------
+
+with(data_model, cor(bet_w, wit_w))
+
+
+#--------------------------------------
+# ortogonalidad
+#--------------------------------------
+
+ssb <- sum(data_model$bet_s)
+
+ssw <- sum(data_model$wit_s)
+
+sst <- sum(data_model$tot_s)
+
+#--------------------------------------
+# grados de libertad
+#--------------------------------------
+
+n_groups <- 3   # tenemos 3 grupos
+ 
+n_total  <- 24  # tenemos 24 observaciones
+
+df_b <- n_groups - 1 
+
+df_w <- (n_total - 1) - (n_groups - 1)
+
+df_t <- df_b + df_w
+
+#--------------------------------------
+# alternativamente grados de libertad
+#--------------------------------------
+
+df_b <- n_groups - 1 
+
+df_w <- n_total - n_groups
+
+df_t <- n_total - 1
+
+
+#--------------------------------------
+# mean squares
+#--------------------------------------
+
+ms_b <- ssb/df_b
+
+ms_w <- ssw/df_w
+
+
+#--------------------------------------
+# F
+#--------------------------------------
+
+f_value <- ms_b/ms_w
+
+
+#--------------------------------------
+# P value
+#--------------------------------------
+
+p_value <- pf(f_value, df1 = df_b, df2 = df_w, lower.tail = FALSE)
+p_value
+
+
+#--------------------------------------
+# Tabla F (ver Vik, 2014, p165)
+#--------------------------------------
+
+options(scipen = 9999)
+options(digits = 8)
+
+tibble::tribble(
+  ~source,        ~ss,    ~df,    ~ms,       ~F,      ~p,
+  "Drug abuse",   ssb,   df_b,   ms_b,  f_value,      p_value,
+  "Within"    ,   ssw,   df_w,   ms_w,       NA,      NA,
+  "Total"     ,   sst,   df_t,     NA,       NA,      NA
+) %>%
+knitr::kable(., digits = 6)
+
+#--------------------------------------
+# tabla de F de ANOVA
+#--------------------------------------
+
+table_13_1 %>%
+aov(score ~ drug, data = .) %>%
+summary()
+
+
+```
+
+
+
+# ANOVA enfoque tradicional
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# ANOVA
+#----------------------------------------------------------
+
+#--------------------------------------
+# anova two factors
+#--------------------------------------
+
+table_13_1 %>%
+aov(score ~ drug, data = .) %>%
+summary()
+
+```
+
+
+# Diferencias de medias entre grupos
+
+## Comparaciones via re-parametrización del modelo de regresión
+
+```{r , echo=TRUE, warning=FALSE}
+
+#----------------------------------------------------------
+# ANOVA via regresión
+#----------------------------------------------------------
+
+#--------------------------------------
+# preparar datos
+#--------------------------------------
+
+data_model <- table_13_1 %>%
+              mutate(drug_1 = case_when(
+                drug == 'none'      ~  1,
+                drug == 'alcohol'   ~  0,
+                drug == 'poly_drug' ~  0
+                )) %>%
+              mutate(drug_2 = case_when(
+                drug == 'none'      ~  0,
+                drug == 'alcohol'   ~  1,
+                drug == 'poly_drug' ~  0
+                )) %>%
+              mutate(drug_3 = case_when(
+                drug == 'none'      ~  0,
+                drug == 'alcohol'   ~  0,
+                drug == 'poly_drug' ~  1
+                )) %>%
+              mutate(grand_mean = mean(score, na.rm = TRUE)) %>%
+              mutate(center = score - grand_mean) %>%
+              dplyr::glimpse()
+
+
+#--------------------------------------
+# todos los modelos posibles
+#--------------------------------------
+
+# model 1: none
+lm(score ~ drug_2 + drug_3, data = data_model) %>%
+summary()
+
+# model 2: alcohol
+lm(score ~ drug_1 + drug_3, data = data_model) %>%
+summary()
+
+
+# model 3: poly_drug
+lm(score ~ drug_1 + drug_2, data = data_model) %>%
+summary()
+
+#--------------------------------------
+# modelos ajustados como objetos
+#--------------------------------------
+
+# model 1: none
+m01 <- lm(score ~ drug_2 + drug_3, data = data_model)
+
+# model 2: alcohol
+m02 <- lm(score ~ drug_1 + drug_3, data = data_model)
+
+
+# model 3: poly_drug
+m03 <- lm(score ~ drug_1 + drug_2, data = data_model)
+
+#--------------------------------------
+# tabla de modelos ajustados
+#--------------------------------------
+
+texreg::screenreg(
+    list(m01, m02, m03),
+    star.symbol = "*", 
+    center = TRUE, 
+    doctype = FALSE,
+    dcolumn = TRUE, 
+    booktabs = TRUE,
+    single.row = FALSE
+    )
+
+
+```
+
+# Comparaciones múltiples con correcciones
+
+## LSD: least statistical difference
+
+```{r , echo=TRUE, warning=FALSE}
+
+#--------------------------------------
+# least statistical difference
+#--------------------------------------
+
+aov(score ~ drug, data = table_13_1) %>%
+agricolae::LSD.test(., 'drug') %>%
+print()
+
+
+```
+
+## Tukey HSD
+
+```{r , echo=TRUE, warning=FALSE}
+
+#--------------------------------------
+# tukey with base
+#--------------------------------------
+
+anova_model <- aov(score ~ drug, data = data_model)
+TukeyHSD(x=anova_model, 'drug', conf.level=0.95)
+
+
+#--------------------------------------
+# tukey with multcomp
+#--------------------------------------
+
+library(multcomp)
+data_model <- data_model %>%
+              mutate(drug_fct = as.factor(drug))
+
+anova_model <- aov(score ~ drug_fct, data = data_model)
+post_hocs <- glht(anova_model, linfct = mcp(drug_fct = "Tukey"))
+summary(post_hocs)
+
+```
+
+## Bonferroni
+
+```{r , echo=TRUE, warning=FALSE}
+#--------------------------------------
+# bonferroni
+#--------------------------------------
+
+rstatix::emmeans_test(
+score ~ drug, 
+data = data_model,
+p.adjust.method = "bonferroni"
+) %>%
+knitr::kable(., digits = 2)
+
+
+```
+
+## Holm
+
+```{r , echo=TRUE, warning=FALSE}
+#--------------------------------------
+# holm
+#--------------------------------------
+
+rstatix::emmeans_test(
+score ~ drug, 
+data = data_model,
+p.adjust.method = "holm"
+) %>%
+knitr::kable(., digits = 2)
+
+```
+
+## FDR
+
+```{r , echo=TRUE, warning=FALSE}
+#--------------------------------------
+# fdr
+#--------------------------------------
+
+rstatix::emmeans_test(
+score ~ drug, 
+data = data_model,
+p.adjust.method = "fdr"
+) %>%
+knitr::kable(., digits = 2)
+
+
+```
+
+# ANOVA via regresión
+
+```{r , echo=TRUE, warning=FALSE}
+
+#--------------------------------------
+# mostrar datos
+#--------------------------------------
+
+knitr::kable(data_model)
+
+#--------------------------------------
+# formulas
+#--------------------------------------
+
+f01 <- as.formula(score  ~ + 1)
+f02 <- as.formula(score  ~ + 1 + drug_2 + drug_3)
+f03 <- as.formula(score  ~ + 1 + drug_1 + drug_2)
+f04 <- as.formula(score  ~ + 1 + drug_1 + drug_3)
+f05 <- as.formula(score  ~ 0 + drug_1 + + drug_2 + drug_3)
+f06 <- as.formula(center ~ 0 + drug_1 + + drug_2 + drug_3)
+
+#--------------------------------------
+# ajustar modelos
+#--------------------------------------
+
+m01 <- lm(f01, data = data_model)
+m02 <- lm(f02, data = data_model)
+m03 <- lm(f03, data = data_model)
+m04 <- lm(f04, data = data_model)
+m05 <- lm(f05, data = data_model)
+m06 <- lm(f06, data = data_model)
+
+#--------------------------------------
+# resumen de cada modelo
+#--------------------------------------
+
+summary(m01) # modelo nulo
+
+summary(m02) # modelo donde "none" es el intercepto
+
+summary(m03) # modelo donde "alcholo" es el intercepto
+
+summary(m04) # modelo donde "poly_drug" es el intercepto
+
+summary(m05) # modelo sin intercepto
+
+summary(m06) # modelo emulando a una prueba t de una muestra
+
+#--------------------------------------
+# tabla de modelos
+#--------------------------------------
+
+texreg::screenreg(
+    list(m01, m02, m03, m04, m05, m06),
+    star.symbol = "*", 
+    center = TRUE, 
+    doctype = FALSE,
+    dcolumn = TRUE, 
+    booktabs = TRUE,
+    single.row = FALSE
+    )
+
+#--------------------------------------
+# descriptivos
+#--------------------------------------
+
+data_13_srs %>%
+group_by(drug) %>%
+summarize(
+  score = survey_mean(score, vartype = c('ci', 'se'))
+) %>%
+knitr::kable(., digits = 2)
+
+#--------------------------------------
+# sum of squares
+#--------------------------------------
+
+anova(m01)
+anova(m02)
+anova(m03)
+anova(m04)
+
+#--------------------------------------
+# F stat
+#--------------------------------------
+
+broom::glance(m01)
+broom::glance(m02)
+broom::glance(m03)
+broom::glance(m04)
+
+#--------------------------------------
+# wald test
+#--------------------------------------
+
+broom::tidy(m01)
+broom::tidy(m02)
+broom::tidy(m03)
+broom::tidy(m04)
+
+
+```

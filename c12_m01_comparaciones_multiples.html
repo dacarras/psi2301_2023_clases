@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="anova-para-tres-grupos-y-comparaciones-múltiples">ANOVA para
+tres grupos y comparaciones múltiples</h1>
+<p>dacarras</p>
+<h1 id="taller-8-anova-para-tres-grupos">Taller 8: ANOVA para tres
+grupos</h1>
+<h2 id="cargar-datos">Cargar datos</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar datos</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar dplyr</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># datos Vik (2014, p161)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>table_13_1 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">text =</span> <span class="st">&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">person  score   drug</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">      1     3   none</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">      2     5   none</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">      3     6   none</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">      4     8   none</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">      5     9   alcohol</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">      6    11   alcohol</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">      7    19   alcohol</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">      8    15   alcohol</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">      9    16   poly_drug</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">     10    16   poly_drug</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">     11    19   poly_drug</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">     12    17   poly_drug</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">     13     3   none</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">     14     5   none</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="st">     15     4   none</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">     16     6   none</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="st">     17     8   alcohol</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="st">     18    10   alcohol</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="st">     19    24   alcohol</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="st">     20    24   alcohol</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="st">     21    22   poly_drug</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="st">     22    23   poly_drug</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st">     23    19   poly_drug</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="st">     24    20   poly_drug</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># mostrar datos</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(table_13_1, <span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">person</th>
+<th align="right">score</th>
+<th align="left">drug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">9</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">19</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">15</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">17</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">5</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">4</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">6</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">8</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">10</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="right">22</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">23</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">20</td>
+<td align="left">poly_drug</td>
+</tr>
+</tbody>
+</table>
+<h2 id="descriptivos">Descriptivos</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptivos</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># casos por grupo</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">xtabs</span>(<span class="sc">~</span> drug, <span class="at">data =</span> table_13_1)</span></code></pre></div>
+<pre><code>## drug
+##   alcohol      none poly_drug 
+##         8         8         8</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># casos por grupo</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">count</span>(table_13_1, drug)</span></code></pre></div>
+<pre><code>##        drug n
+## 1   alcohol 8
+## 2      none 8
+## 3 poly_drug 8</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptivos por uso de drogas</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>table_13_1 <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(drug) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">drug</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alcohol</td>
+<td align="right">15</td>
+<td align="right">6.59</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="left">none</td>
+<td align="right">5</td>
+<td align="right">1.69</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">poly_drug</td>
+<td align="right">19</td>
+<td align="right">2.62</td>
+<td align="right">8</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># medias con intervalo de confianza</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(srvyr)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>data_13_srs <span class="ot">&lt;-</span> table_13_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">as_survey_design</span>(<span class="at">ids =</span> <span class="dv">1</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>data_13_srs <span class="sc">%&gt;%</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(drug) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">survey_mean</span>(score, <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&#39;ci&#39;</span>, <span class="st">&#39;se&#39;</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">drug</th>
+<th align="right">score</th>
+<th align="right">score_low</th>
+<th align="right">score_upp</th>
+<th align="right">score_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alcohol</td>
+<td align="right">15</td>
+<td align="right">10.39</td>
+<td align="right">19.61</td>
+<td align="right">2.23</td>
+</tr>
+<tr class="even">
+<td align="left">none</td>
+<td align="right">5</td>
+<td align="right">3.82</td>
+<td align="right">6.18</td>
+<td align="right">0.57</td>
+</tr>
+<tr class="odd">
+<td align="left">poly_drug</td>
+<td align="right">19</td>
+<td align="right">17.17</td>
+<td align="right">20.83</td>
+<td align="right">0.88</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># medias con intervalo de confianza</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>data_plot <span class="ot">&lt;-</span> data_13_srs <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(drug) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">survey_mean</span>(score, <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&#39;ci&#39;</span>, <span class="st">&#39;se&#39;</span>))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>data_plot <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(<span class="fu">desc</span>(score)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">drug_lab =</span> forcats<span class="sc">::</span><span class="fu">as_factor</span>(drug)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(., <span class="fu">aes</span>(drug_lab, score)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> score_low, <span class="at">ymax =</span> score_upp), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">xlab</span>(<span class="st">&#39;&#39;</span>) <span class="sc">+</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><img src="data:image/png;base64,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AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAgQIAAAQI9FRBAe9p4ZRMgQIAAAQIEcgkIoLnkrZcAAQIECBAg0FMBAbSnjVc2AQIECBAgQCCXgACaS956CRAg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PPbYY+mqq65K1113Xdpoo43SAQcckA455JDm93yjsmYCdQlM2wB6+eWXp1e+8pVrtEO48sor00EHHZRmzZq1yt1cm/Wt8krckQABAgSyCsTrw1vf+ta0YMGC9PTTTzdj2WKLLdLcuXPT/fffn7bddtus47NyArUITNsAet5556V99913jQLoZz/72bTXXnutVgBdm/XVsrGog8B0FHjyySfTvffeO5ShP/XUU2nzzTcfyrJWZyFLlixJTzzxRNpss83SBhtssDoPHcp9I4htsskmaZ11Rn/V1qOPPtrs51fngMGaFn3HHXekN77xjcs9PLahmJ73vOelSy+9NO28887L3WfYM2JbiynH9rZo0aIU29zGG2887LJWurwI+vPnz08PPfTQSu877Ds888wzafbs2c3zbBjL3nPPPbM8X4cx9lEso/gAunTp0vTAAw+kZcuWpZ122inNnNk+5Hnz5jXvVnfYYYcJbrHTjifT9ttvP2F+/BHLXW+99dI222wz4bYVPWbCHf1BgEDxApdddlk67rjjih+nAZYvEK8zhx12WPkDNcIiBG6//fa0++67FzGWEgfRnuYKGendd9+dPvShD6XtttsuxTU5CxcuTBdccMFy705i3ne+8530/Oc/P82ZMyd96lOfak6ffOxjH0vxLjLeve62227p4x//eFp33XWb6s4+++zmHV6s43Wve1065ZRTUrzTXtFjVsQS75ziXwTlXFOu9ees3bpHv73FNp5zW4vn1+qsP+dzMte+wHoJEMgvEPueVd3/xD4tptXZtw2zwi7WO2PGjBT/ppqKDqA33XRTOuaYY9Lhhx/ejP+kk05KN9xwQzr44IPH6rn55pub8BmnRTbccMP0xS9+Mf3kJz9JP/3pT9Muu+ySzjnnnCZovuc972ke+9KXvrR57O/8zu+kP/iDP0j33HNPevvb355OPvnkFKfZV/SYsZW2/BIbWRxpzXHaYDCcCN/xL8cUp01yTjnd45RNriln3XGNXK7pkUceWeVVD05lrvID3JEAAQJDEIiDWqt7CUU8Jtc07NeTTTfdtLl0Z6p6ig6gRx11VLr22mvTP/zDP6Rf/OIX6b777muOgo4v5tZbb037779/Ez5j/vHHH9/cfOGFF6a//Mu/bH6P0/bxgaXvfve7aRBA99tvv+a2uKYnTvNHgLrllltW+JjmAVP8J1J+rGcU1ym1DSFeZCOA57g+LIJI1D7V5RFt4x3WvAjcYZ/DffHixc272xzmcY1UrD+uCRz1FG+2ouc5rg+LmuM0aOzYVvV6xBzjHHVPrI8AgfIEYj+1qgF0TfZtw6w4MtCwX0fjEscVTUUH0HPPPTfdddddzTU3hx56aPrkJz+5XC3R3LhYejDF0ah4cYzrOqOhgymOTkbQHEzjQ8PgEPHKHjN4bNvPeDGM0/u5XuwigEazc6w/XMNz/fXXb6PpdF4EsbDPUXdsZ1F7jnXHNp9r3bHeXB9QiH5HAI2vxhlcTrOyDWz8c31l93U7AQIEhiUQ+6lVfX2I15PYt8WBpBwHc3IcVCg6gMbp9TjtHl+Z9PDDD6fbbrttwun32EjiVPr555/fXOsZYTR+j9Por371q1N8nUYc6YzwefXVVzfXeq5ow1qTx6xoeW4jQCC/wK//+q+n008/fSgDiQAcLyqjnuKocxyhiHXneHGKuuOFcfBmfZT1x1mOeHM9ijcSP/jBD9I111wz4aDG5FqPPfbY9IIXvGDy7KH/HeYx5dje4g1mbHM5DirEZz3i4FF868Kop7gOMoLYsMy33nrrUZcwrdZXdACNJ3pclxnXd8aOL8JknIYfP8Uh7qOPPrq5VnTHHXdM8Sn4d73rXc1G9MMf/jC9+c1vbo4UvfzlL09xSn9FU3zR8Oo+ZkXLcxsBAvkFIoDGv2FMjz/+eNpqq62GsajVWkYEgrjudcsttxy73Gi1FrCWd45vBok3+Kt62cNarm7Cwx988MHm1GDs60cxxXeAXnLJJRNCaLz+DA5wvOlNbxrFMFJsazHl2N5yhsA4ixlvtiZ/o80o0COAxoeW43lm6l5gxrPg/++jV92va43WEO/C4h3wyq51i3dM8W/y4e7YmOOd+8quRRg/uDV5TDw+14tTrDu+Uip20DneNYZXrlPw8e0I8aKYY4cxOAU/7Otmop8rm+J7GWP98Q0Ro57iFHz0PL6ce9RTHBWKF4ioe1VPwQ9zjLme4wLorGb/NsxermhZ3/rWt5rPHsRZuNjODjzwwBQfZB18hmBFjx3WbQLoxK9UHJbripaTM4DG/jze6MX/6CDHWY4c+7aij4DGhhLhYmXhM+4XAbMtZK7Ju+Y1eUyMwUSAAAEC01/gyCOPTPFvlKf/p7+aCgisnsDo/7cWqzc+9yZAgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQIECgdAEBtPQOGR8BAgQIECBAoDIBAbSyhiqHAAECBAgQIFC6gABaeoeMjwABAgQIECBQmYAAWllDlUOAAAECBAgQKF1AAC29Q8ZHgAABAgQIEKhMQACtrKHKIUCAAAECBAiULiCAlt4h4yNAgAABAgQIVCYggFbWUOUQIECAAAECBEoXEEBL75DxESBAgAABAgQqExBAK2uocggQIECAAAECpQsIoKV3yPgIECBAgAABApUJCKCVNVQ5BAgQIECAAIHSBQTQ0jtkfAQIECBAgACBygQE0MoaqhwCBAgQIECAQOkCAmjpHTI+AgQIECBAgEBlAgJoZQ1VDgECBAgQILDqAjfffHN64xvfmLbffvv0nOc8J73gBS9IH//4x9PChQtXfSHuudoCxQbQyy+/PM2fP3+1C5r8gGeeeSZ9+9vfTvHTRIAAAQIECBAYCFx33XXpZS97WfrGN76RHnnkkTR37tx05513pg9/+MNpww03TLNnzx7c1c8hC8wc8vKGtrjzzjsv7bvvvmmjjTZaq2UuW7YsnX322enwww9PM2bMWKtleTABAgQIEOirwEUXXZR+/OMfd1r+okWL0pIlS9LGG2/c6Xpi4Y8//nj66le/2rqeGEdMu+++ezriiCPSOut0e7wuao4jrpF5ul7X+973vvT85z+/te5RzhxJAH3qqafSZpttlu6///601VZbLbdhLV68OP3qV79KO++8c5o5c+KQ4t1HvAtZb731Gpe474IFC9Kmm266QqfYeB588MG00047jd1v0OD4GUdEN9lkk+Yo62BZ8ZhY/qxZs8bWFePaZZddmndFcT8hdozTLwQIECDQI4Grr746XXjhhT2qODU54oILLqiq5uOOO64/AfSEE05Iz3ve81Icjbz33nvTW9/61vT7v//7TUPjSOePfvSjtMUWWzSHv+No5W677TbW7Gj85ptvnk466aRm3sUXX5zmzJmTTj755LH7TP7lhz/8YXP9xq677pqWLl06dvOtt96azj333PTkk082QfcDH/hA+tznPpfOP//85j4/+MEP0ve///30sY99LMUy/u7v/q4ZSxySjzB7ySWXNEF6bIHjfonaItjG2HJNEaBzrD/WG/XHz1FP0d9Yd466o9+x7hyXdwzMc9QdNccbtRzrjvXGFM/Jro8StG3LuZ7jYR5TvPmOMYx6inWGea434Dn3bVH7YLsbpfugzzmeZ7Hutv1qDodRmvdlXfPmzVtu/x09H/a2tv7666f4N9U08XDjVPcawvzf+I3fSG9729vSE0880YTPV7ziFennP/95E/i+/OUvN0c541D4pZdemk477bSxNR566KHpjDPOGAugV1xxRfroRz86dvvkXwLxIx/5SBM0X/SiF6XLLrss3XLLLWN3u+uuu5pD7ltvvXX6z//8z7H543+JnV0s4zOf+UzaY489mjGefvrp4++y3O8RQiIM5bxeJA7f57poOkf4HN+E3O7jxzLK33PWnXPdEYZyTTnrHsZ18WvqNuwXp9UZR+xfcu9jVme8w7xvzu1t8uuJADrMzuZbVgTQtu2qbd7ajDLOGhcRQCNwxrTlllumF77whem2225rguFv//ZvN+Ezbnv1q1+d/vAP/zC9973vjT+bKUJkFPBf//VfzRGPuC4kjmxONd1zzz1pgw02SHvuuWdzl1j++ClOyW+77bbjZy33e4TUuGQgwmdMsYwVIcZ91l133Wa9cYlBjumBBx5oLkuIywpGPcVGG+YrM+piXI899lizXcR2NeopjkbFm47BJRujXP/TTz/dHA3bbrvtRrnaZl2DN1px1mLUUwSwOIMRdcdzbtRTXDOW4zkeb6zjAxKxncclSaOe4sBBnInKcdQ5zj7Fc2xwqdQoa4/QHZd/xf5t1FNsazHl2N4ieEbYnPx6MorrMkft3Mf1bbPNNmnHHXecUHqOfdvIjoCOrzReRGInGkEwPm02mAbvcifv5OIo6FVXXdXs/F73utcN7t76M3YWg9Oy8QIV/8Yvb/KHmuK+g2lwdCGe8PEOIW6Lxw+ejIP7+UmAAAECBAgQILDmAiMLoP/xH//RXPQaRxfjHW0coYwjmXFNZ7y7jnf28dVLccRzfGCM0l772temP/7jP26u24zT+Cuanvvc5zZH4q699tp00EEHNafPB9dPTX5cvKOPsUTYjHd28ZiY4uhKfCDqyiuvTIccckj65je/meU6v8nj9TcBAgQIEMgl8IlPfCKdddZZna4+jjrHa/Iozu7EmYWjjz46xfeAtl3iEQe0PvvZz6Y4CNb1FGfU4gPbcXng5A9jD3vdcQS0hGlkATQaHJ+8iqOMZ555ZnM6JU6pHHbYYemYY45p0ONwf9v1nXFEMr4yIDaGCI0rmuIi+VhGfIdXfMAovlh2qtMn8WGn/fbbLx177LHNePbZZ58Up3RjissA4oto42snYowxdb1RNCvxHwIECBAgUKBAvP6u7DV4bYcdl3TFNd477LDD2i5qlR5//fXXp1e96lXpxhtvbD54FWc8I5vE2c8I3Cc8+yHqUUwRQAdnhvuSNUYWQOMT53FdZYTM8Z+kPPHEE5vrPgN//DU+3/nOdyb0PB4T3+W5KtNee+2Vvva1r6W4Ti7WOZjig1CTv0Ii3s3FBh+n5gdNjw8UxaUBn//855ujsQ899FD6whe+sNbfSToYh58ECBAgQIBAfoHIFvENOPG5lPgZr/cvfvGL02te85oJ+SH/SOsbwcgCaNCND5jjKePIZvxrm+KT8vF/KHj00Ueb/1tB3CeC5fe+9722uzff2bn//vs3t40Pn613/v8zJ48rNsgbbrghxTuj+CBSrOv444+fEJxXtDy3ESBAgAABAtNHIC4LjNf7+JBjjg+1Th+p4Y10JAH01FNPXeNP8sW1CnvvvXd65zvfORYA4xrRqT6BO6xP6X3wgx9sPqUfn6p///vfP/aJ+OHRWxIBAgQIECBAoJ8CIwmgk78KaXWo45PyRx555ISHxGn8gw8+eMK8Yf8Rp+N/8zd/s/k37GVbHgECBAgQIECgzwLd/s9N+yyrdgIECBAgQIAAgVYBAbSVxUwCBAgQIECAAIGuBATQrmQtlwABAgQIECBAoFVAAG1lMZMAAQIECBAgQKArAQG0K1nLJUCAAAECBAgQaBUQQFtZzCRAgAABAgQIEOhKQADtStZyCRAgQIAAAQIEWgUE0FYWMwkQIECAAAECBLoSEEC7krVcAgQIECBAgACBVgEBtJXFTAIECBAgQIAAga4EBNCuZC2XAAECBAgQIECgVUAAbWUxkwABAgQIECBAoCsBAbQrWcslQIAAAQIECBBoFRBAW1nMJECAAAECBAgQ6EpAAO1K1nIJECBAgAABAgRaBQTQVhYzCRAgQIAAAQIEuhIQQLuStVwCBAgQIECAAIFWAQG0lcVMAgQIECBAgACBrgQE0K5kLZcAAQIECBAgQKBVQABtZTGTAAECBAgQIECgKwEBtCtZyyVAgAABAgQIEGgVEEBbWcwkQIAAAQIECBDoSkAA7UrWcgkQIECAAAECBFoFBNBWFjMJECBAgAABAgS6EhBAu5K1XAIECBAgQIAAgVYBAbSVxUwCBAgQIECAAIGuBATQrmQtlwABAgQIECBAoFVAAG1lMZMAAQIECBAgQKArAQG0K1nLJUCAAAECBAgQaBUQQFtZzCRAgAABAgQIEOhKQADtStZyCRAgQIAAAQIEWgUE0FYWMwkQIECAAAECBLoSEEC7krVcAgQIECBAgACBVgEBtJXFTAIECBAgQIAAga4EBNCuZC2XAAECBAgQIECgVUAAbWUxkwABAgQIECBAoCsBAbQrWcslQIAAAQIECBBoFRBAW1nMJECAAAECBAgQ6EpAAO1K1nIJECBAgAABAgRaBQTQVhYzCRAgQIAAAQIEuhIQQLuStVwCBAgQIECAAIFWAQG0lcVMAgQIECBAgACBrgQE0K5kLZcAAQIECBAgQKBVQABtZTGTAAECBAgQIECgKwEBtCtZyyVAgAABAgQIEGgVEEBbWcwkQIAAAQIECBDoSkAA7UrWcgkQIECAAAECBFoFBNBWFjMJECBAgAABAgS6EhBAu5K1XAIECBAgQIAAgVYBAbSVxUwCBAgQIECAAIGuBATQrmQtlwABAgQIECBAoFVAAG1lMZMAAQIECBAgQKArAQG0K1nLJUCAAAECBAgQaBUQQFtZzCRAgAABAgQIEOhKQADtStZyCRAgQIAAAQIEWgUE0FYWMwkQIECAAAECBLoSEEC7krVcAgQIECBAgACBVgEBtJXFTAIECBAgQIAAga4EBNCuZC2XAAECBAgQIECgVUAAbWUxkwABAgQIECBAoCsBAbQrWcslQIAAAQIECBBoFRBAW1nMJECAAAECBAgQ6EpAAO1K1nIJECBAgAABAgRaBQTQVhYzCRAgQIAAAQIEuhIQQLuStVwCBAgQIECAAIFWAQG0lcVMAgQIECBAgACBrgQE0K5kLZcAAQIECBAgQKBVQABtZTGTAAECBAgQIECgKwEBtCtZyyVAgAABAgQIEGgVEEBbWcwkQIAAAQIECBDoSkAA7UrWcgkQIECAAAECBFoFBNBWFjMJECBAgAABAgS6EpjxzLNTVwu3XAIECBAgQIAAAQKTBRwBnSzibwIECBAgQIAAgU4FBNBOeS2cAAECBAgQIEBgsoAAOlnE3wQIECBAgAABAp0KCKCd8lo4AQIECBAgQIDAZAEBdLKIvwkQIECAAAECBDoVEEA75e124bNnz07f//73u11JYUt/6KGH0hVXXJHuuOOOwkbW7XCeeuqp9L3vfS89+uij3a4o49Jvu+22dM8990wYwcKFC9M111yTfvKTn6TFixdPuK2WP+bMmdPUOLmeX/ziF83ze/78+ZNvqubvq666Ki1ZsmS5emrft7XV3Yd9W9tzPPr/05/+NN16663LbQc1zHjiiSfSd7/73fTAAw9MKKcP+7YJBbf8IYC2oEyXWeecc076p3/6p+ky3LUe50033ZTe9a53pV/+8pfpk5/8ZIr6+zBFAHvHO96R7rrrrvS+970vfeMb36iu7Lvvvju9973vTT//+c/HaovgdcIJJzQh7Mtf/nJ6//vfn2r71rgFCxakM844I33rW98aqzt++Yu/+It0/vnnp9tvv70xuP766yfcXsMfX//619NZZ52Vli5dulw5Ne/b2uruw76t7Tk+b9689Ja3vCVdd9116ZJLLknvfve7l9sWpvOMeF7/2Z/9WYrazzzzzPSpT32qKacP+7ZV6dvMVbmT+5QncOWVV6Z77723vIF1OKLPfe5zzQvzAQcckOLd40c/+tG0aNGitP7663e41vyL/trXvtYE0Fe+8pXpVa96Vfrrv/7rdPTRR+cf2JBGEDvpL3zhC2nzzTefsMR/+Zd/SS972cvSe97znmb+n/zJnzQvVNH/GqZ4Q/HBD36wqXt87f/93/+dHnnkkfSlL32pKXOPPfZoXpxf+tKX1lB2c8Tz9NNPT4899lhrPbXu2+JI31R1175vm+o5Hmd1XvziF489xyOMxpuu2Oan+xRvrOI5fPbZZ6ddd901HXfccelNb3pTOv7445s3nDXv21a1d46ArqpUQfeLUzUXX3xxeuc731nQqLodyty5c1OckowdU7xA/epXv2qOntQePkN1p512SnEELI4WxJGC7bbbrlvsES99o402Sv/4j/+YXvjCF6YZM2aMrT36vd9++439Hb/XdJou+vlXf/VXzRGgsSKf/SVekC+44IKxWXH5RRwprWWKF+Z4E3HeeectV1LN+7ap6u7Dvm2q5/iOO+7YXE4VfY/n+5NPPpm23HLL5baL6Thj3XXXTV/84heb8Bnjj+dwXG4T20Ht+7ZV7ZcjoKsqVcj9li1b1hz5i6NCG2ywQSGj6n4YDz/8cIqd2GmnnZZe9KIXNe8sI5D8+Z//efcrz7yGk046KZ144onp8ssvbwLahRdemHlEw139a17zmrEFjj/F/uCDD6bNNtts7Lb4/b777hv7e7r/svfeezclXH311RNKWWeddZptPWbGdh9HUU499dQJ95nOf8R+64gjjliuhNr3bVPV3Yd921TP8Ze85CXNG6448hnXeMdBlZreYM+aNavZzmPbPvfcc9Pv/d7vpW222SbVvm9b7sk9xQxHQKeAKXX2V77ylbTnnnumffbZp9QhdjKueALHkaA//dM/bUJnXB8XR0Ljwwq1T6eccko69thjmw9fffjDH2520jV/MGXQzziCEEcLBlOcwow3IX2Z4rqx6P3b3va25ohh7XXbt/Vv3xZnPmIf/s1vfrO5zOTf/u3f0o9+9KOqNvW4XOxDH/pQE7Dj2u6Y+r5vGzRYAB1ITJOfl112WfrXf/3XFO8oBxc3H3nkkdNk9Gs+zMG74jg9GdPGG2+ctt1223TnnXeu+UKnwSPjU+/x7w1veEOaOXNmevnLX94cIRj/YZ1pUMYaDTGOFDz++ONjj43f43KEPkzR3zi6f/LJJ6fDDz+8DyUn+7Z+7dtio77hhhvSUUcd1VwHvfPOO6dDDjmkudyolg0+LrOJD45uuumm6W/+5m/GPq/Q533b+N4KoOM1psHvF110UXPkL47+ffrTn26uL5n8CdppUMZqDzGewHHUN76+JKY4OhTXge6+++6rvazp9IDYUe2yyy7Nhfkx7jh1E1/rsddee02nMtZorBG2//3f/725dipCeHwV07777rtGy5pOD4pa4xP/cbQ7PnjWl8m+rV/7ttiuDzrooHTjjTc2m3ic4fjZz35W1dH+eA7H5xY+8IEPNEc9B8/lvu7bBvUPfroGdCDhZ/ECcR1cfIo0jgDHi3Q8ueNIaO1TfPXU5z//+eYC9rhGsi/X//7u7/5u8/2YcX1YXBd5zDHHjF3QX3PPv/rVrzYfxhj/lTRbbbVVs93XXHefa+vrvu31r39982G0uPYzPoy1//77pwMPPLCKTSHOYlx77bXNv3hOD6a///u/T33dtw0MBj9nPPuC9szgDz8JTAeBOAK4xRZbTPjE9HQY99qOMXbQg4va13ZZ0+nxcY1YXPsZlyCYCNQs0Nd9W3xCPJ7ffXuO933fJoDWvDdTGwECBAgQIECgQAHXgBbYFEMiQIAAAQIECNQsIIDW3F21ESBAgAABAgQKFBBAC2yKIREgQIAAAQIEahYQQGvurtoIECBAgAABAgUKCKAFNsWQCBAgQIAAAQI1CwigNXdXbQQIECBAgACBAgUE0AKbYkgECBAgQIAAgZoFBNCau6s2AgQIECBAgECBAgJogU0xJAIECBAgQIBAzQICaM3dVRsBAgQIECBAoEABAbTAphgSAQIECBAgQKBmAQG05u6qjQABAgQIECBQoIAAWmBTDIkAAQIECBAgULOAAFpzd9VGgAABAgQIEChQQAAtsCmGRIAAAQIECBCoWUAArbm7aiNAgAABAgQIFCgggBbYFEMiQIAAAQIECNQsIIDW3F21ESBAgAABAgQKFBBAC2yKIREgQIAAAQIEahYQQGvurtoIECBAgAABAgUKCKAFNsWQCBAgQIAAAQI1CwigNXdXbQQIECBAgACBAgUE0AKbYkgECBAgQIAAgZoFBNCau6s2AgQIECBAgECBAgJogU0xJAIECBAgQIBAzQL/B3JLYDmo2VZBAAAAAElFTkSuQmCC" /><!-- --></p>
+<h2 id="anova-por-pasos">ANOVA por pasos</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar datos</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># medias de clusters</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>c_mean <span class="ot">&lt;-</span> <span class="cf">function</span> (x, j) {</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ave</span>(x, j, <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">mean</span>(x, <span class="at">na.rm =</span> T))</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># crear componentes</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>data_model <span class="ot">&lt;-</span> table_13_1 <span class="sc">%&gt;%</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">all =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>              <span class="co"># between</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>              <span class="do">## gran media</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">bet_g =</span> <span class="fu">c_mean</span>(score, all))  <span class="sc">%&gt;%</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>              <span class="do">## media de los grupos</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">bet_c =</span> <span class="fu">c_mean</span>(score, drug)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>              <span class="do">## desviaciones de las medias de los grupos</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">bet_w =</span> bet_c <span class="sc">-</span> bet_g)       <span class="sc">%&gt;%</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>              <span class="do">## distancias cuadráticas (varianza entre)</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">bet_s =</span> bet_w<span class="sc">^</span><span class="dv">2</span>)             <span class="sc">%&gt;%</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>              <span class="co"># within</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>              <span class="do">## media de los grupos</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">wit_c =</span> <span class="fu">c_mean</span>(score, drug)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>              <span class="do">## desviaciones de las observaciones,</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>              <span class="co">#  respecto a las medias de los grupos</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">wit_w =</span> score <span class="sc">-</span> wit_c)      <span class="sc">%&gt;%</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>              <span class="do">## distancias cuadráticas (varianza intra)</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">wit_s =</span> wit_w<span class="sc">^</span><span class="dv">2</span>)            <span class="sc">%&gt;%</span>              </span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>              <span class="do">## desviaciones de las observaciones,</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>              <span class="co">#  respecto a las medias de los grupos</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">tot_w =</span> score <span class="sc">-</span> bet_g) <span class="sc">%&gt;%</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">tot_s =</span> tot_w<span class="sc">^</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>              dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 24
+## Columns: 13
+## $ person &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, …
+## $ score  &lt;int&gt; 3, 5, 6, 8, 9, 11, 19, 15, 16, 16, 19, 17, 3, 5, 4, 6, 8, 10, 2…
+## $ drug   &lt;chr&gt; &quot;none&quot;, &quot;none&quot;, &quot;none&quot;, &quot;none&quot;, &quot;alcohol&quot;, &quot;alcohol&quot;, &quot;alcohol&quot;…
+## $ all    &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ bet_g  &lt;dbl&gt; 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,…
+## $ bet_c  &lt;dbl&gt; 5, 5, 5, 5, 15, 15, 15, 15, 19, 19, 19, 19, 5, 5, 5, 5, 15, 15,…
+## $ bet_w  &lt;dbl&gt; -8, -8, -8, -8, 2, 2, 2, 2, 6, 6, 6, 6, -8, -8, -8, -8, 2, 2, 2…
+## $ bet_s  &lt;dbl&gt; 64, 64, 64, 64, 4, 4, 4, 4, 36, 36, 36, 36, 64, 64, 64, 64, 4, …
+## $ wit_c  &lt;dbl&gt; 5, 5, 5, 5, 15, 15, 15, 15, 19, 19, 19, 19, 5, 5, 5, 5, 15, 15,…
+## $ wit_w  &lt;dbl&gt; -2, 0, 1, 3, -6, -4, 4, 0, -3, -3, 0, -2, -2, 0, -1, 1, -7, -5,…
+## $ wit_s  &lt;dbl&gt; 4, 0, 1, 9, 36, 16, 16, 0, 9, 9, 0, 4, 4, 0, 1, 1, 49, 25, 81, …
+## $ tot_w  &lt;dbl&gt; -10, -8, -7, -5, -4, -2, 6, 2, 3, 3, 6, 4, -10, -8, -9, -7, -5,…
+## $ tot_s  &lt;dbl&gt; 100, 64, 49, 25, 16, 4, 36, 4, 9, 9, 36, 16, 100, 64, 81, 49, 2…</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mostrar datos</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>data_model <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(drug) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">person</th>
+<th align="right">score</th>
+<th align="left">drug</th>
+<th align="right">all</th>
+<th align="right">bet_g</th>
+<th align="right">bet_c</th>
+<th align="right">bet_w</th>
+<th align="right">bet_s</th>
+<th align="right">wit_c</th>
+<th align="right">wit_w</th>
+<th align="right">wit_s</th>
+<th align="right">tot_w</th>
+<th align="right">tot_s</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">9</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">-6</td>
+<td align="right">36</td>
+<td align="right">-4</td>
+<td align="right">16</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">-4</td>
+<td align="right">16</td>
+<td align="right">-2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">19</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">4</td>
+<td align="right">16</td>
+<td align="right">6</td>
+<td align="right">36</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">15</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">8</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">-7</td>
+<td align="right">49</td>
+<td align="right">-5</td>
+<td align="right">25</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">10</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">-5</td>
+<td align="right">25</td>
+<td align="right">-3</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">9</td>
+<td align="right">81</td>
+<td align="right">11</td>
+<td align="right">121</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">15</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">15</td>
+<td align="right">9</td>
+<td align="right">81</td>
+<td align="right">11</td>
+<td align="right">121</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">-2</td>
+<td align="right">4</td>
+<td align="right">-10</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-7</td>
+<td align="right">49</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">-5</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">-2</td>
+<td align="right">4</td>
+<td align="right">-10</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">5</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">4</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-9</td>
+<td align="right">81</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">6</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">5</td>
+<td align="right">-8</td>
+<td align="right">64</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-7</td>
+<td align="right">49</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">-3</td>
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">-3</td>
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">36</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">17</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">-2</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="right">22</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">81</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">23</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">4</td>
+<td align="right">16</td>
+<td align="right">10</td>
+<td align="right">100</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">36</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">20</td>
+<td align="left">poly_drug</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">19</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right">19</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">7</td>
+<td align="right">49</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ortogonalidad</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(data_model, <span class="fu">cor</span>(bet_w, wit_w))</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ortogonalidad</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ssb <span class="ot">&lt;-</span> <span class="fu">sum</span>(data_model<span class="sc">$</span>bet_s)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ssw <span class="ot">&lt;-</span> <span class="fu">sum</span>(data_model<span class="sc">$</span>wit_s)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>sst <span class="ot">&lt;-</span> <span class="fu">sum</span>(data_model<span class="sc">$</span>tot_s)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># grados de libertad</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>n_groups <span class="ot">&lt;-</span> <span class="dv">3</span>   <span class="co"># tenemos 3 grupos</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>n_total  <span class="ot">&lt;-</span> <span class="dv">24</span>  <span class="co"># tenemos 24 observaciones</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>df_b <span class="ot">&lt;-</span> n_groups <span class="sc">-</span> <span class="dv">1</span> </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>df_w <span class="ot">&lt;-</span> (n_total <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> (n_groups <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>df_t <span class="ot">&lt;-</span> df_b <span class="sc">+</span> df_w</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># alternativamente grados de libertad</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>df_b <span class="ot">&lt;-</span> n_groups <span class="sc">-</span> <span class="dv">1</span> </span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>df_w <span class="ot">&lt;-</span> n_total <span class="sc">-</span> n_groups</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>df_t <span class="ot">&lt;-</span> n_total <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="co"># mean squares</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>ms_b <span class="ot">&lt;-</span> ssb<span class="sc">/</span>df_b</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>ms_w <span class="ot">&lt;-</span> ssw<span class="sc">/</span>df_w</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="co"># F</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>f_value <span class="ot">&lt;-</span> ms_b<span class="sc">/</span>ms_w</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="co"># P value</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fu">pf</span>(f_value, <span class="at">df1 =</span> df_b, <span class="at">df2 =</span> df_w, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>p_value</span></code></pre></div>
+<pre><code>## [1] 0.000004406794</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla F (ver Vik, 2014, p165)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">9999</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">digits =</span> <span class="dv">8</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>source,        <span class="sc">~</span>ss,    <span class="sc">~</span>df,    <span class="sc">~</span>ms,       <span class="sc">~</span>F,      <span class="sc">~</span>p,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Drug abuse&quot;</span>,   ssb,   df_b,   ms_b,  f_value,      p_value,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Within&quot;</span>    ,   ssw,   df_w,   ms_w,       <span class="cn">NA</span>,      <span class="cn">NA</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Total&quot;</span>     ,   sst,   df_t,     <span class="cn">NA</span>,       <span class="cn">NA</span>,      <span class="cn">NA</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">6</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">source</th>
+<th align="right">ss</th>
+<th align="right">df</th>
+<th align="right">ms</th>
+<th align="right">F</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Drug abuse</td>
+<td align="right">832</td>
+<td align="right">2</td>
+<td align="right">416.000000</td>
+<td align="right">23.483871</td>
+<td align="right">0.000004</td>
+</tr>
+<tr class="even">
+<td align="left">Within</td>
+<td align="right">372</td>
+<td align="right">21</td>
+<td align="right">17.714286</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">1204</td>
+<td align="right">23</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de F de ANOVA</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>table_13_1 <span class="sc">%&gt;%</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(score <span class="sc">~</span> drug, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value      Pr(&gt;F)    
+## drug         2    832  416.00  23.484 0.000004407 ***
+## Residuals   21    372   17.71                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<h1 id="anova-enfoque-tradicional">ANOVA enfoque tradicional</h1>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># anova two factors</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>table_13_1 <span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(score <span class="sc">~</span> drug, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value      Pr(&gt;F)    
+## drug         2    832  416.00  23.484 0.000004407 ***
+## Residuals   21    372   17.71                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<h1 id="diferencias-de-medias-entre-grupos">Diferencias de medias entre
+grupos</h1>
+<h2 id="comparaciones-via-re-parametrización-del-modelo-de-regresión">Comparaciones
+via re-parametrización del modelo de regresión</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA via regresión</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------------------------------------------</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># preparar datos</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>data_model <span class="ot">&lt;-</span> table_13_1 <span class="sc">%&gt;%</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">drug_1 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;none&#39;</span>      <span class="sc">~</span>  <span class="dv">1</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;alcohol&#39;</span>   <span class="sc">~</span>  <span class="dv">0</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;poly_drug&#39;</span> <span class="sc">~</span>  <span class="dv">0</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                )) <span class="sc">%&gt;%</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">drug_2 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;none&#39;</span>      <span class="sc">~</span>  <span class="dv">0</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;alcohol&#39;</span>   <span class="sc">~</span>  <span class="dv">1</span>,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;poly_drug&#39;</span> <span class="sc">~</span>  <span class="dv">0</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>                )) <span class="sc">%&gt;%</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">drug_3 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;none&#39;</span>      <span class="sc">~</span>  <span class="dv">0</span>,</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;alcohol&#39;</span>   <span class="sc">~</span>  <span class="dv">0</span>,</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>                drug <span class="sc">==</span> <span class="st">&#39;poly_drug&#39;</span> <span class="sc">~</span>  <span class="dv">1</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>                )) <span class="sc">%&gt;%</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">grand_mean =</span> <span class="fu">mean</span>(score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">center =</span> score <span class="sc">-</span> grand_mean) <span class="sc">%&gt;%</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>              dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 24
+## Columns: 8
+## $ person     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, …
+## $ score      &lt;int&gt; 3, 5, 6, 8, 9, 11, 19, 15, 16, 16, 19, 17, 3, 5, 4, 6, 8, 1…
+## $ drug       &lt;chr&gt; &quot;none&quot;, &quot;none&quot;, &quot;none&quot;, &quot;none&quot;, &quot;alcohol&quot;, &quot;alcohol&quot;, &quot;alco…
+## $ drug_1     &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0,…
+## $ drug_2     &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,…
+## $ drug_3     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,…
+## $ grand_mean &lt;dbl&gt; 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,…
+## $ center     &lt;dbl&gt; -10, -8, -7, -5, -4, -2, 6, 2, 3, 3, 6, 4, -10, -8, -9, -7,…</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># todos los modelos posibles</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model 1: none</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(score <span class="sc">~</span> drug_2 <span class="sc">+</span> drug_3, <span class="at">data =</span> data_model) <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = score ~ drug_2 + drug_3, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value    Pr(&gt;|t|)    
+## (Intercept)   5.0000     1.4880  3.3601   0.0029626 ** 
+## drug_2       10.0000     2.1044  4.7519   0.0001079 ***
+## drug_3       14.0000     2.1044  6.6527 0.000001384 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model 2: alcohol</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(score <span class="sc">~</span> drug_1 <span class="sc">+</span> drug_3, <span class="at">data =</span> data_model) <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = score ~ drug_1 + drug_3, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value       Pr(&gt;|t|)    
+## (Intercept)  15.0000     1.4880 10.0803 0.000000001684 ***
+## drug_1      -10.0000     2.1044 -4.7519      0.0001079 ***
+## drug_3        4.0000     2.1044  1.9008      0.0711470 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model 3: poly_drug</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(score <span class="sc">~</span> drug_1 <span class="sc">+</span> drug_2, <span class="at">data =</span> data_model) <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = score ~ drug_1 + drug_2, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value         Pr(&gt;|t|)    
+## (Intercept)  19.0000     1.4880 12.7684 0.00000000002299 ***
+## drug_1      -14.0000     2.1044 -6.6527 0.00000138373510 ***
+## drug_2       -4.0000     2.1044 -1.9008          0.07115 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># modelos ajustados como objetos</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model 1: none</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>m01 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> drug_2 <span class="sc">+</span> drug_3, <span class="at">data =</span> data_model)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># model 2: alcohol</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>m02 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> drug_1 <span class="sc">+</span> drug_3, <span class="at">data =</span> data_model)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># model 3: poly_drug</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>m03 <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> drug_1 <span class="sc">+</span> drug_2, <span class="at">data =</span> data_model)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de modelos ajustados</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>texreg<span class="sc">::</span><span class="fu">screenreg</span>(</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(m01, m02, m03),</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">star.symbol =</span> <span class="st">&quot;*&quot;</span>, </span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">center =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">dcolumn =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">single.row =</span> <span class="cn">FALSE</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<pre><code>## 
+## ==============================================
+##              Model 1    Model 2     Model 3   
+## ----------------------------------------------
+## (Intercept)   5.00 **    15.00 ***   19.00 ***
+##              (1.49)      (1.49)      (1.49)   
+## drug_2       10.00 ***               -4.00    
+##              (2.10)                  (2.10)   
+## drug_3       14.00 ***    4.00                
+##              (2.10)      (2.10)               
+## drug_1                  -10.00 ***  -14.00 ***
+##                          (2.10)      (2.10)   
+## ----------------------------------------------
+## R^2           0.69        0.69        0.69    
+## Adj. R^2      0.66        0.66        0.66    
+## Num. obs.    24          24          24       
+## ==============================================
+## *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<h1 id="comparaciones-múltiples-con-correcciones">Comparaciones
+múltiples con correcciones</h1>
+<h2 id="lsd-least-statistical-difference">LSD: least statistical
+difference</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># least statistical difference</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(score <span class="sc">~</span> drug, <span class="at">data =</span> table_13_1) <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">LSD.test</span>(., <span class="st">&#39;drug&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>()</span></code></pre></div>
+<pre><code>## $statistics
+##     MSerror Df Mean        CV   t.value      LSD
+##   17.714286 21   13 32.375648 2.0796138 4.376375
+## 
+## $parameters
+##         test p.ajusted name.t ntr alpha
+##   Fisher-LSD      none   drug   3  0.05
+## 
+## $means
+##           score       std r        LCL        UCL Min Max   Q25 Q50   Q75
+## alcohol      15 6.5900358 8 11.9054356 18.0945644   8  24  9.75  13 20.25
+## none          5 1.6903085 8  1.9054356  8.0945644   3   8  3.75   5  6.00
+## poly_drug    19 2.6186147 8 15.9054356 22.0945644  16  23 16.75  19 20.50
+## 
+## $comparison
+## NULL
+## 
+## $groups
+##           score groups
+## poly_drug    19      a
+## alcohol      15      a
+## none          5      b
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;group&quot;</code></pre>
+<h2 id="tukey-hsd">Tukey HSD</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tukey with base</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(score <span class="sc">~</span> drug, <span class="at">data =</span> data_model)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>anova_model, <span class="st">&#39;drug&#39;</span>, <span class="at">conf.level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = score ~ drug, data = data_model)
+## 
+## $drug
+##                   diff         lwr        upr      p adj
+## none-alcohol       -10 -15.3043312 -4.6956688 0.00030562
+## poly_drug-alcohol    4  -1.3043312  9.3043312 0.16322078
+## poly_drug-none      14   8.6956688 19.3043312 0.00000401</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tukey with multcomp</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>data_model <span class="ot">&lt;-</span> data_model <span class="sc">%&gt;%</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>              <span class="fu">mutate</span>(<span class="at">drug_fct =</span> <span class="fu">as.factor</span>(drug))</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(score <span class="sc">~</span> drug_fct, <span class="at">data =</span> data_model)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>post_hocs <span class="ot">&lt;-</span> <span class="fu">glht</span>(anova_model, <span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">drug_fct =</span> <span class="st">&quot;Tukey&quot;</span>))</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(post_hocs)</span></code></pre></div>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Tukey Contrasts
+## 
+## 
+## Fit: aov(formula = score ~ drug_fct, data = data_model)
+## 
+## Linear Hypotheses:
+##                          Estimate Std. Error t value Pr(&gt;|t|)    
+## none - alcohol == 0      -10.0000     2.1044 -4.7519   &lt;0.001 ***
+## poly_drug - alcohol == 0   4.0000     2.1044  1.9008   0.1632    
+## poly_drug - none == 0     14.0000     2.1044  6.6527   &lt;0.001 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## (Adjusted p values reported -- single-step method)</code></pre>
+<h2 id="bonferroni">Bonferroni</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bonferroni</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">emmeans_test</span>(</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>score <span class="sc">~</span> drug, </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> data_model,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="at">p.adjust.method =</span> <span class="st">&quot;bonferroni&quot;</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="left">.y.</th>
+<th align="left">group1</th>
+<th align="left">group2</th>
+<th align="right">df</th>
+<th align="right">statistic</th>
+<th align="right">p</th>
+<th align="right">p.adj</th>
+<th align="left">p.adj.signif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">none</td>
+<td align="right">21</td>
+<td align="right">4.75</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">***</td>
+</tr>
+<tr class="even">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-1.90</td>
+<td align="right">0.07</td>
+<td align="right">0.21</td>
+<td align="left">ns</td>
+</tr>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">none</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-6.65</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">****</td>
+</tr>
+</tbody>
+</table>
+<h2 id="holm">Holm</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># holm</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">emmeans_test</span>(</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>score <span class="sc">~</span> drug, </span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> data_model,</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">p.adjust.method =</span> <span class="st">&quot;holm&quot;</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="left">.y.</th>
+<th align="left">group1</th>
+<th align="left">group2</th>
+<th align="right">df</th>
+<th align="right">statistic</th>
+<th align="right">p</th>
+<th align="right">p.adj</th>
+<th align="left">p.adj.signif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">none</td>
+<td align="right">21</td>
+<td align="right">4.75</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">***</td>
+</tr>
+<tr class="even">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-1.90</td>
+<td align="right">0.07</td>
+<td align="right">0.07</td>
+<td align="left">ns</td>
+</tr>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">none</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-6.65</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">****</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fdr">FDR</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># fdr</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">emmeans_test</span>(</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>score <span class="sc">~</span> drug, </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> data_model,</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="at">p.adjust.method =</span> <span class="st">&quot;fdr&quot;</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="left">.y.</th>
+<th align="left">group1</th>
+<th align="left">group2</th>
+<th align="right">df</th>
+<th align="right">statistic</th>
+<th align="right">p</th>
+<th align="right">p.adj</th>
+<th align="left">p.adj.signif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">none</td>
+<td align="right">21</td>
+<td align="right">4.75</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">***</td>
+</tr>
+<tr class="even">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">alcohol</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-1.90</td>
+<td align="right">0.07</td>
+<td align="right">0.07</td>
+<td align="left">ns</td>
+</tr>
+<tr class="odd">
+<td align="left">drug</td>
+<td align="left">score</td>
+<td align="left">none</td>
+<td align="left">poly_drug</td>
+<td align="right">21</td>
+<td align="right">-6.65</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">****</td>
+</tr>
+</tbody>
+</table>
+<h1 id="anova-via-regresión">ANOVA via regresión</h1>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mostrar datos</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data_model)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">person</th>
+<th align="right">score</th>
+<th align="left">drug</th>
+<th align="right">drug_1</th>
+<th align="right">drug_2</th>
+<th align="right">drug_3</th>
+<th align="right">grand_mean</th>
+<th align="right">center</th>
+<th align="left">drug_fct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-10</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-8</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-7</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-5</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">9</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-4</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-2</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">19</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">6</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">15</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">2</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">16</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">6</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">17</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">4</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">3</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-10</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">5</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-8</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">4</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-9</td>
+<td align="left">none</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">6</td>
+<td align="left">none</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-7</td>
+<td align="left">none</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">8</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-5</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">10</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">-3</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">11</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="left">alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">13</td>
+<td align="right">11</td>
+<td align="left">alcohol</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="right">22</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">9</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">23</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">10</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="odd">
+<td align="right">23</td>
+<td align="right">19</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">6</td>
+<td align="left">poly_drug</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">20</td>
+<td align="left">poly_drug</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">7</td>
+<td align="left">poly_drug</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formulas</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>f01 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(score  <span class="sc">~</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>f02 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(score  <span class="sc">~</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">+</span> drug_2 <span class="sc">+</span> drug_3)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>f03 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(score  <span class="sc">~</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">+</span> drug_1 <span class="sc">+</span> drug_2)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>f04 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(score  <span class="sc">~</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">+</span> drug_1 <span class="sc">+</span> drug_3)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>f05 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(score  <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> drug_1 <span class="sc">+</span> <span class="sc">+</span> drug_2 <span class="sc">+</span> drug_3)</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>f06 <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(center <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> drug_1 <span class="sc">+</span> <span class="sc">+</span> drug_2 <span class="sc">+</span> drug_3)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ajustar modelos</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>m01 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f01, <span class="at">data =</span> data_model)</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>m02 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f02, <span class="at">data =</span> data_model)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>m03 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f03, <span class="at">data =</span> data_model)</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>m04 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f04, <span class="at">data =</span> data_model)</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>m05 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f05, <span class="at">data =</span> data_model)</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>m06 <span class="ot">&lt;-</span> <span class="fu">lm</span>(f06, <span class="at">data =</span> data_model)</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="co"># resumen de cada modelo</span></span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m01) <span class="co"># modelo nulo</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f01, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##    -10     -7      0      6     11 
+## 
+## Coefficients:
+##             Estimate Std. Error t value      Pr(&gt;|t|)    
+## (Intercept)  13.0000     1.4769  8.8024 0.00000000801 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.2352 on 23 degrees of freedom</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m02) <span class="co"># modelo donde &quot;none&quot; es el intercepto</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f02, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value    Pr(&gt;|t|)    
+## (Intercept)   5.0000     1.4880  3.3601   0.0029626 ** 
+## drug_2       10.0000     2.1044  4.7519   0.0001079 ***
+## drug_3       14.0000     2.1044  6.6527 0.000001384 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m03) <span class="co"># modelo donde &quot;alcholo&quot; es el intercepto</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f03, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value         Pr(&gt;|t|)    
+## (Intercept)  19.0000     1.4880 12.7684 0.00000000002299 ***
+## drug_1      -14.0000     2.1044 -6.6527 0.00000138373510 ***
+## drug_2       -4.0000     2.1044 -1.9008          0.07115 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m04) <span class="co"># modelo donde &quot;poly_drug&quot; es el intercepto</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f04, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##             Estimate Std. Error t value       Pr(&gt;|t|)    
+## (Intercept)  15.0000     1.4880 10.0803 0.000000001684 ***
+## drug_1      -10.0000     2.1044 -4.7519      0.0001079 ***
+## drug_3        4.0000     2.1044  1.9008      0.0711470 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.6616 
+## F-statistic: 23.484 on 2 and 21 DF,  p-value: 0.0000044068</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m05) <span class="co"># modelo sin intercepto</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f05, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##        Estimate Std. Error t value         Pr(&gt;|t|)    
+## drug_1    5.000      1.488  3.3601         0.002963 ** 
+## drug_2   15.000      1.488 10.0803 0.00000000168385 ***
+## drug_3   19.000      1.488 12.7684 0.00000000002299 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.92928,    Adjusted R-squared:  0.91917 
+## F-statistic: 91.978 on 3 and 21 DF,  p-value: 0.0000000000030475</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m06) <span class="co"># modelo emulando a una prueba t de una muestra</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = f06, data = data_model)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.00  -2.25   0.00   1.50   9.00 
+## 
+## Coefficients:
+##        Estimate Std. Error t value   Pr(&gt;|t|)    
+## drug_1   -8.000      1.488 -5.3762 0.00002479 ***
+## drug_2    2.000      1.488  1.3440  0.1932761    
+## drug_3    6.000      1.488  4.0321  0.0006017 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.2088 on 21 degrees of freedom
+## Multiple R-squared:  0.69103,    Adjusted R-squared:  0.64689 
+## F-statistic: 15.656 on 3 and 21 DF,  p-value: 0.000014131</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de modelos</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>texreg<span class="sc">::</span><span class="fu">screenreg</span>(</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(m01, m02, m03, m04, m05, m06),</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">star.symbol =</span> <span class="st">&quot;*&quot;</span>, </span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">center =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">doctype =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">dcolumn =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">single.row =</span> <span class="cn">FALSE</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<pre><code>## 
+## ===============================================================================
+##              Model 1    Model 2    Model 3     Model 4     Model 5    Model 6  
+## -------------------------------------------------------------------------------
+## (Intercept)  13.00 ***   5.00 **    19.00 ***   15.00 ***                      
+##              (1.48)     (1.49)      (1.49)      (1.49)                         
+## drug_2                  10.00 ***   -4.00                  15.00 ***   2.00    
+##                         (2.10)      (2.10)                 (1.49)     (1.49)   
+## drug_3                  14.00 ***                4.00      19.00 ***   6.00 ***
+##                         (2.10)                  (2.10)     (1.49)     (1.49)   
+## drug_1                             -14.00 ***  -10.00 ***   5.00 **   -8.00 ***
+##                                     (2.10)      (2.10)     (1.49)     (1.49)   
+## -------------------------------------------------------------------------------
+## R^2           0.00       0.69        0.69        0.69       0.93       0.69    
+## Adj. R^2      0.00       0.66        0.66        0.66       0.92       0.65    
+## Num. obs.    24         24          24          24         24         24       
+## ===============================================================================
+## *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptivos</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>data_13_srs <span class="sc">%&gt;%</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(drug) <span class="sc">%&gt;%</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">survey_mean</span>(score, <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&#39;ci&#39;</span>, <span class="st">&#39;se&#39;</span>))</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(., <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">drug</th>
+<th align="right">score</th>
+<th align="right">score_low</th>
+<th align="right">score_upp</th>
+<th align="right">score_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alcohol</td>
+<td align="right">15</td>
+<td align="right">10.39</td>
+<td align="right">19.61</td>
+<td align="right">2.23</td>
+</tr>
+<tr class="even">
+<td align="left">none</td>
+<td align="right">5</td>
+<td align="right">3.82</td>
+<td align="right">6.18</td>
+<td align="right">0.57</td>
+</tr>
+<tr class="odd">
+<td align="left">poly_drug</td>
+<td align="right">19</td>
+<td align="right">17.17</td>
+<td align="right">20.83</td>
+<td align="right">0.88</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sum of squares</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m01)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: score
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Residuals 23   1204 52.3478</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m02)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: score
+##           Df Sum Sq Mean Sq  F value       Pr(&gt;F)    
+## drug_2     1     48  48.000  2.70968      0.11463    
+## drug_3     1    784 784.000 44.25806 0.0000013837 ***
+## Residuals 21    372  17.714                          
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m03)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: score
+##           Df Sum Sq Mean Sq F value       Pr(&gt;F)    
+## drug_1     1    768 768.000 43.3548 0.0000016065 ***
+## drug_2     1     64  64.000  3.6129     0.071147 .  
+## Residuals 21    372  17.714                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m04)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: score
+##           Df Sum Sq Mean Sq F value       Pr(&gt;F)    
+## drug_1     1    768 768.000 43.3548 0.0000016065 ***
+## drug_3     1     64  64.000  3.6129     0.071147 .  
+## Residuals 21    372  17.714                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># F stat</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(m01)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1         0             0  7.24        NA      NA    NA  -81.0  166.  168.
+## # ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(m02)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic    p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.691         0.662  4.21      23.5 0.00000441     2  -66.9  142.  147.
+## # ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(m03)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic    p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.691         0.662  4.21      23.5 0.00000441     2  -66.9  142.  147.
+## # ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(m04)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 12
+##   r.squared adj.r.squared sigma statistic    p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.691         0.662  4.21      23.5 0.00000441     2  -66.9  142.  147.
+## # ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="co"># wald test</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--------------------------------------</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(m01)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 5
+##   term        estimate std.error statistic       p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 (Intercept)       13      1.48      8.80 0.00000000801</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(m02)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   term        estimate std.error statistic    p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+## 1 (Intercept)        5      1.49      3.36 0.00296   
+## 2 drug_2            10      2.10      4.75 0.000108  
+## 3 drug_3            14      2.10      6.65 0.00000138</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(m03)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)       19      1.49     12.8  2.30e-11
+## 2 drug_1           -14      2.10     -6.65 1.38e- 6
+## 3 drug_2            -4      2.10     -1.90 7.11e- 2</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(m04)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   term        estimate std.error statistic       p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1 (Intercept)     15        1.49     10.1  0.00000000168
+## 2 drug_1         -10.0      2.10     -4.75 0.000108     
+## 3 drug_3           4        2.10      1.90 0.0711</code></pre>
+
+</body>
+</html>
